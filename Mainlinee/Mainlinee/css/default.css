@@ -1,0 +1,766 @@
+/*==========RESET========== (ou comportamento inicial)*/
+* { 
+    margin: 0; 
+    padding: 0; 
+    font-size: 100%; 
+    border: none; 
+    outline: none; 
+    box-sizing: border-box; 
+    font-family: 'Open Sans', sans-serif;
+  }
+
+body {
+  background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Título "nossos serviços" */
+.servicos1 {
+  font-size: 2.5em;
+  padding: 1% 4%; 
+  color: #130400; 
+  font-weight: 700;
+}
+
+ /* CABEÇALHO */
+ .cabecalho {
+   width: 100%; 
+   float: left; 
+   padding: 1% 4%;
+  }
+
+.logo {
+    width: 56px;
+    height: 56px;
+    float: left;
+    background: url(../img/logo-mobile.png) center center/100px no-repeat;
+    font-size: 0px;
+}
+
+ .btn-menu {
+   width: 56px; 
+   height: 56px; 
+   float: right; 
+   text-align: center; 
+   color: #fff; 
+   border-radius: 56px; 
+   cursor: pointer; 
+   background: linear-gradient(to right, #21a3ef, #94ceef);
+  }
+
+ /* MENU */
+.menu {
+  display:none; 
+  width: 100%; 
+  height: 100%; 
+  position: fixed; 
+  background-color: rgba(0,0,0,0.9); top:0; left: 0;cursor: pointer;
+}
+.btn-close {
+  font-size: 1.5em; 
+  color: #fff; 
+  float: right; 
+  cursor: pointer; 
+  margin: 2% 3% 0 0;
+}
+.menu ul{
+  width: 100%; 
+  float: left; 
+  text-align: center;
+}
+.menu li {
+  padding: 1.5%;
+}
+.menu li a {
+  font-size: 2em; 
+  color: #fff; 
+  padding: 1.5% 3%; 
+  font-weight: 700;
+}
+.menu li a:hover {
+  color: #21a3ef;
+}
+
+/* BANNER */
+.banner {
+  width: 100%; 
+  float: left; 
+  text-align: center; 
+  padding: 10% 4%; 
+  background: url(../img/bg2.jpg) no-repeat fixed;
+  margin-bottom: 20px;
+}
+.title {
+  width: 100%;
+}
+.title h2 {
+  font-size: 2.5em; color: #fff; font-weight: 700;
+}
+.title h3 {
+  font-size: 1.5em; color: #fff;
+}
+.buttons {
+  width: 100%; margin-top: 2%;
+}
+.buttons i {
+  float: right;
+}
+.btn {
+  width: 100%; 
+  font-size: 1.5em; 
+  text-align: left; 
+  cursor: pointer; 
+  padding: 5%; 
+  border-radius: 10px;
+}
+
+/* SERVIÇOS */
+.servicos {
+  width: 100%; 
+  float: left; 
+  padding: 3% 4%;
+}
+.servico {
+  width: 100%; 
+  height: 900px; 
+  background-color: #fff; 
+  text-align: left; 
+  border-radius: 7px; 
+  margin-bottom: 0%;
+  margin-top:20px;
+}
+.servico img {
+  border-radius: 7px 7px 0 0;
+}
+.inner {
+  padding: 7%;
+}
+.inner a {
+  font-size: 2em; 
+  color: #130400; 
+  font-weight: 700;
+}
+.inner h4 {
+  font-size: 1.3em; 
+  color: #130400; 
+  margin-top: 2%;
+}
+.inner p {
+  margin-top: 6%; 
+  color: #130400; 
+  line-height: 1.5em;
+  font-size: 1.4em;
+}
+
+/* EMPRESA */
+
+#sobre{
+  width:100%; 
+  min-height:50px; 
+  display: flex; 
+  margin-top: 20px; 
+  background-color: #000;
+}
+.historia{
+  width:70%; 
+  height:530px;
+}
+.historia > h1{
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 2em; 
+  color: #fff; 
+  font-weight: 700; 
+  margin-top:35px; 
+  margin-left: 50px;
+}
+    .historia > p {
+        font-family: 'Open Sans', sans-serif;
+        color: #fff;
+        margin-left: 50px;
+        text-align: left;
+        width: 100%;
+        margin-top: 8px;
+        font-size: 1.3em;
+    }
+  .logot {
+  display: none;
+}
+
+/* COLABORADORES */
+#colaboradores{
+  background-color: #fff; 
+  width: 85%; 
+  height: 50%;
+}
+#colaboradores > div{
+  width: 250px; 
+  height: 400px; 
+  float: right; 
+  text-align: center; 
+  font-family: 'Open Sans', sans-serif; 
+  color: #000;
+}
+#colaboradores > div > img{
+  width: 200px; height: 200px; 
+  border-radius: 100px; 
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); 
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.eu h1{
+  font-size: 1.5em; 
+  color: #000; 
+  font-weight: 700;
+  margin-left: 30px;
+}
+.eu p {
+  font-weight: 700; 
+  margin-left: 30px;
+}
+.prince h1{
+  font-size: 1.5em; 
+  color: #000; 
+  font-weight: 700;
+  margin-left: 30px;
+}
+.prince p {
+  font-weight: 700;
+  margin-left: 30px;
+}
+.natanael h1{
+  font-size: 1.5em; 
+  color: #000; 
+  font-weight: 700; 
+  margin-left: 30px;
+}
+.natanael p {
+  font-weight: 700; 
+  margin-left: 30px;
+}
+.wesley h1{
+  font-size: 1.5em; 
+  color: #000; 
+  font-weight: 700; 
+  margin-left: 30px;
+}
+.wesley p {
+  font-weight: 700; 
+  margin-left: 30px;
+}
+
+.contatos {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 14px;
+}
+.contatos > img{
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	border-radius: 100px;
+  cursor: pointer;
+  margin-left: 0px;
+  margin-top: 20px;
+}
+
+/* RODAPÉ */
+.rodape { 
+  width: 100%; 
+  float: left; 
+  padding: 3% 4%; 
+  text-align: center; 
+  background: linear-gradient(to right, #0d95e5, #94ceef);
+}
+.social-icons a {
+  font-size: 1.5em; 
+  color: rgba(0,0,0,0.7); 
+  margin-right: 3%;
+}
+.social-icons a:last-child {
+  margin-right: 0;
+}
+.social-icons a:hover {
+  color: rgb(2,2,2);
+}
+.copyright {
+  margin-top: 2%; 
+  color: rgba(0,0,0,0.7);
+}
+
+/* ========== MOBILE FIRST ========== */
+/* SMALL DEVICES - SMARTPHONES */
+
+@media screen and (min-width: 360px) {
+
+    .contatos {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: -2px;
+    }
+
+    #colaboradores > div > img {
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+
+    .eu h1 {
+        font-size: 1.5em;
+        color: #000;
+        font-weight: 700;
+        margin-left: 0px;
+    }
+
+    .eu p {
+        font-weight: 700;
+        margin-left: 0px;
+    }
+
+    .prince h1 {
+        font-size: 1.5em;
+        color: #000;
+        font-weight: 700;
+        margin-left: 0px;
+    }
+
+    .prince p {
+        font-weight: 700;
+        margin-left: 0px;
+    }
+
+    .wesley h1 {
+        font-size: 1.5em;
+        color: #000;
+        font-weight: 700;
+        margin-left: 0px;
+    }
+
+    .wesley p {
+        font-weight: 700;
+        margin-left: 0px;
+    }
+
+    .natanael h1 {
+        font-size: 1.5em;
+        color: #000;
+        font-weight: 700;
+        margin-left: 0px;
+    }
+
+    .natanael p {
+        font-weight: 700;
+        margin-left: 0px;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .contatos {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: -6px;
+    }
+
+    #colaboradores > div > img {
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        margin-top: 20px;
+        margin-left: -2px;
+    }
+
+    .eu h1 {
+        font-size: 1.5em;
+        color: #000;
+        font-weight: 700;
+        margin-left: -10px;
+    }
+
+    .eu p {
+        font-weight: 700;
+        margin-left: -10px;
+    }
+
+    .prince h1 {
+        font-size: 1.5em;
+        color: #000;
+        font-weight: 700;
+        margin-left: -10px;
+    }
+
+    .prince p {
+        font-weight: 700;
+        margin-left: -10px;
+    }
+
+    .wesley h1 {
+        font-size: 1.5em;
+        color: #000;
+        font-weight: 700;
+        margin-left: -10px;
+    }
+
+    .wesley p {
+        font-weight: 700;
+        margin-left: -10px;
+    }
+
+    .natanael h1 {
+        font-size: 1.5em;
+        color: #000;
+        font-weight: 700;
+        margin-left: -10px;
+    }
+
+    .natanael p {
+        font-weight: 700;
+        margin-left: -10px;
+    }
+
+}
+
+@media screen and (min-width: 414px) {
+    .contatos {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: -20px;
+    }
+
+    #colaboradores > div > img {
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        margin-top: 20px;
+        margin-left: -37px;
+    }
+
+    .eu h1 {
+        font-size: 1.5em;
+        color: #000;
+        font-weight: 700;
+        margin-left: -40px;
+    }
+
+    .eu p {
+        font-weight: 700;
+        margin-left: -40px;
+    }
+
+    .prince h1 {
+        font-size: 1.5em;
+        color: #000;
+        font-weight: 700;
+        margin-left: -40px;
+    }
+
+    .prince p {
+        font-weight: 700;
+        margin-left: -40px;
+    }
+
+    .wesley h1 {
+        font-size: 1.5em;
+        color: #000;
+        font-weight: 700;
+        margin-left: -40px;
+    }
+
+    .wesley p {
+        font-weight: 700;
+        margin-left: -40px;
+    }
+
+    .natanael h1 {
+        font-size: 1.5em;
+        color: #000;
+        font-weight: 700;
+        margin-left: -40px;
+    }
+
+    .natanael p {
+        font-weight: 700;
+        margin-left: -40px;
+    }
+
+}
+
+    @media screen and (min-width: 480px) {
+        
+
+        .btn {
+            font-size: 2.5em;
+        }
+    }
+
+    
+    /* SMALL DEVICES - TABLETS */
+
+    @media screen and (min-width: 768px) {
+        .btn-close {
+            display: none;
+        }
+
+        .btn-menu {
+            display: none;
+        }
+
+        .menu {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background-color: rgba(0,0,0,0.9);
+            top: 0;
+            left: 0;
+            cursor: pointer;
+        }
+
+        .menu {
+            width: auto;
+            height: 56px;
+            line-height: 56px;
+            float: right;
+            background-color: #f5f5f5;
+            display: block !important;
+            position: static;
+        }
+
+            .menu li {
+                padding: 0;
+                float: left;
+            }
+
+                .menu li a {
+                    color: #130400;
+                    font-size: 1em;
+                    padding: 15px;
+                }
+
+                    .menu li a:hover {
+                        border: none;
+                        color: #21a3ef
+                    }
+
+        .servico {
+            width: 49%;
+            float: left;
+            margin-right: 2%;
+        }
+
+        #colaboradores > div {
+            width: 250px;
+            height: 400px;
+            float: right;
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+            color: #000;
+            margin-left: 5px;
+            margin-right: -40px;
+        }
+
+        #sobre {
+            width: 100%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            border: 1px solid;
+        }
+
+
+        .servico:nth-child(2) {
+            margin-right: 0;
+        }
+
+        .servico:nth-child(3) {
+            display: inline;
+        }
+
+        .historia {
+            width: 70%;
+            height: 220px;
+        }
+
+            .historia > h1 {
+                font-size: 1.5em;
+                font-family: 'Open Sans', sans-serif;
+                color: #fff;
+                margin-bottom: 15px;
+                margin-top: -50px;
+            }
+
+            .historia > p {
+                font-family: 'Open Sans', sans-serif;
+                color: #fff;
+            }
+
+        .logot {
+            margin-bottom: 50px;
+            display: block;
+        }
+
+        .logo {
+            width: 214px;
+            background: url(../img/mainline_transparente.png) center center/150px no-repeat;
+        }
+    }
+
+    /* SMALL DEVICES - TABLETS & DESKTOPS */
+    @media screen and (min-width: 960px) {
+        .title {
+            width: 70%;
+            float: left;
+            text-align: left;
+        }
+
+            .title h2 {
+                font-size: 3em;
+            }
+
+            .title h3 {
+                font-size: 2em;
+            }
+
+        .buttons {
+            width: 30%;
+            float: right;
+            margin-top: 0;
+        }
+
+        .servico {
+            width: 32%;
+        }
+
+            .servico:nth-child(2) {
+                margin-right: 2%;
+            }
+
+            .servico:nth-child(3) {
+                margin-right: 0;
+            }
+
+        .historia {
+            width: 70%;
+            height: 220px;
+        }
+
+            .historia > h1 {
+                font-family: 'Open Sans', sans-serif;
+                color: #fff;
+                margin-bottom: 15px;
+            }
+
+            .historia > p {
+                font-family: 'Open Sans', sans-serif;
+                color: #fff;
+                font-size: 12 0%;
+            }
+
+        .logot {
+            display: block;
+        }
+
+        #colaboradores {
+            background: #fff;
+            width: 100%;
+            height: 0%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+            #colaboradores > div {
+                width: 250px;
+                height: 380px;
+                float: right;
+                text-align: center;
+                font-family: calibri light;
+            }
+
+                #colaboradores > div > img {
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 100px;
+                    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+                }
+
+        .contatos {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+            .contatos > img {
+                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+                border-radius: 100px;
+                cursor: pointer;
+            }
+
+    }
+
+    /* LARGE DEVICES - WIDE SCREENS */
+
+    
+
+    @media screen and (min-width: 1280px) {
+        .btn-menu {
+            display: none;
+        }
+
+        .btn-close {
+            display: none;
+        }
+
+        .menu {
+            width: auto;
+            height: 56px;
+            line-height: 56px;
+            float: right;
+            background-color: #f5f5f5;
+            display: block !important;
+            position: static;
+        }
+
+            .menu li {
+                padding: 0;
+                float: left;
+            }
+
+                .menu li a {
+                    color: #130400;
+                    font-size: 1em;
+                    padding: 15px;
+                }
+
+                    .menu li a:hover {
+                        border: none;
+                        color: #21a3ef
+                    }
+    }

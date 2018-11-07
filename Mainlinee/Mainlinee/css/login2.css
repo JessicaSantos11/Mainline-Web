@@ -72,11 +72,11 @@ body {
 }
 
 .btn-close {
-    font-size: 3em;
+    font-size: 1.5em;
     color: #fff;
     float: right;
     cursor: pointer;
-    margin-right: 5%;
+    margin: 2% 3% 0 0;
 }
 
 /* menu ul é onde começa o css dos links do menu */
@@ -110,7 +110,7 @@ body {
 	float: left;
 	text-align: center;
     padding: 3% 4%;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .login-campos {
@@ -127,6 +127,18 @@ body {
     background: #f2f2f2;
     border: 0;
     box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+    font-size: 15px;
+}
+
+
+.cadastrolink {
+    margin-top: 20px;
+    margin-bottom: 80px;
 }
 
 .logar {
@@ -154,10 +166,9 @@ body {
     margin-top: 2%;
     width: 100%;
     font-size: 1.5em;
-    margin-bottom: 150px;
-    margin-top: 50px;
+    margin-bottom: 0px;
+    margin-top: 15px;
     font-family: 'Open Sans', sans-serif;
-   
 }
 .logar:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2eb2ff));
@@ -231,6 +242,18 @@ body {
     .logar {
         width: 80%;
 
+    }
+
+    h1 {
+        font-family: 'Open Sans', sans-serif;
+        color: #000;
+        font-size: 18px;
+    }
+
+
+    .cadastrolink {
+        margin-top: 20px;
+        margin-bottom: 80px;
     }
 }
 

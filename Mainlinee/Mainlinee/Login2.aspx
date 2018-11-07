@@ -20,7 +20,7 @@
             <a href="Default.aspx"><h1 class="logo"> Mainline - Monitoramento de Hardware. </h1></a>
             <button class="btn-menu"><i class="fa fa-bars fa lg"></i></button>
             <nav class="menu">
-                <a class="btn-close">x</a>
+                <a class="btn-close"><i class="fa fa-times"></i></a> 
                 <ul>
                     <li><a href="Default.aspx">Início</a></li>
                     <li><a href="#">Contato</a></li>
@@ -32,11 +32,12 @@
         <div class="login">
             <div class="login-campos">
                 <h2>E-mail</h2>
-                <asp:TextBox runat="server" CssClass="input" TextMode="Email" placeholder="Digite seu email" ID="txtEmail" />
+                <asp:TextBox runat="server" CssClass="input" TextMode="Email" placeholder="Digite seu email" ID="txtEmail" required/>
                 <h2>Senha</h2>
-                <asp:TextBox runat="server" CssClass="input" TextMode="Password" placeholder="Digite sua senha" ID="txtSenha" />
+                <asp:TextBox runat="server" CssClass="input" TextMode="Password" placeholder="Digite sua senha" ID="txtSenha" required/>
             </div>
             <asp:Button Text="Login" CssClass="logar" ID="btnLogar" OnClick="btnLogar_Click" runat="server" />
+            <div class="cadastrolink"><a href="#"><h1>Não possui uma conta? Cadastre-se</h1></a></div>
         </div>
     </form>
     <footer class="rodape">
@@ -44,6 +45,7 @@
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-twitter"></i></a>
                 <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-envelope"></i></a>
             </div>
             <p class="copyright"> 
                 Copyright © Mainline 2018. Todos os direitos reservados. </p>

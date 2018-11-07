@@ -108,7 +108,7 @@
 						<p>Desenvolvimento</p>
 						<div class="contatos">
 								<a href="#"><img src="img/linkedin.png" width="50px" height="50px" /></a>
-								<a href="#"><img src="img/github.png" width="50px" height="50px" /></a>
+								<a href="https://github.com/wesley49"><img src="img/github.png" width="50px" height="50px" /></a>
 							</div>
 					</div>
 					<div class="natanael">
@@ -129,6 +129,7 @@
 			<a href="#"><i class="fa fa-facebook"></i></a>
 			<a href="#"><i class="fa fa-twitter"></i></a>
 			<a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-envelope"></i></a>
 		</div>
 		<p class="copyright"> 
 			Copyright © Mainline 2018. Todos os direitos reservados. </p>

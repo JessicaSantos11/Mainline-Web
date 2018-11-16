@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: #fff;
 }
 a{
 	text-decoration: none;
@@ -27,6 +27,7 @@ img{
     width: 100%;
     float: left;
     padding: 1% 4%;
+    background-color: #f5f5f5;
 }
 
 .logo {
@@ -47,8 +48,9 @@ img{
     cursor: pointer;
     background: linear-gradient(to right, #21a3ef, #94ceef);
 }
+/*===== FIM DO CABEÇALHO =====*/
 
-/* MENU */
+/*===== MENU =====*/
 .menu {
     display: none;
     width: 100%;
@@ -67,7 +69,7 @@ img{
     cursor: pointer;
     margin: 2% 3% 0 0;
 }
-
+/* menu ul é onde começa o css dos links do menu */
 .menu ul {
     width: 100%;
     float: left;
@@ -107,6 +109,9 @@ img{
 	cursor: pointer;
 	margin: 2% 3% 0 0;
 }
+/*===== FIM DO MENU =====*/
+
+/*===== CADASTRO =====*/
 
 .fundo{
 	width: 100%;
@@ -129,32 +134,33 @@ img{
     box-sizing: border-box;
 }
 .cadastrar {
-	-moz-box-shadow:inset 0px -3px 7px 0px #2eb2ff;
-	-webkit-box-shadow:inset 0px -3px 7px 0px #2eb2ff;
-	box-shadow:inset 0px -3px 7px 0px #2eb2ff;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2eb2ff), color-stop(1, #0688fa));
-	background:-moz-linear-gradient(top, #2eb2ff 5%, #0688fa 100%);
-	background:-webkit-linear-gradient(top, #2eb2ff 5%, #0688fa 100%);
-	background:-o-linear-gradient(top, #2eb2ff 5%, #0688fa 100%);
-	background:-ms-linear-gradient(top, #2eb2ff 5%, #0688fa 100%);
-	background:linear-gradient(to bottom, #2eb2ff 5%, #0688fa 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2eb2ff', endColorstr='#0688fa',GradientType=0);
-	background-color:#2eb2ff;
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-	border-radius:3px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-size:15px;
-	padding:9px 23px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #263666;
-	margin-top: 2%;
-	width: 100%;
-	font-size: 1.5em;
-	text-align: left;
-	margin-bottom: 0;
+    -moz-box-shadow: inset 0px -3px 7px 0px #2eb2ff;
+    -webkit-box-shadow: inset 0px -3px 7px 0px #2eb2ff;
+    box-shadow: inset 0px -3px 7px 0px #2eb2ff;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2eb2ff), color-stop(1, #0688fa));
+    background: -moz-linear-gradient(top, #2eb2ff 5%, #0688fa 100%);
+    background: -webkit-linear-gradient(top, #2eb2ff 5%, #0688fa 100%);
+    background: -o-linear-gradient(top, #2eb2ff 5%, #0688fa 100%);
+    background: -ms-linear-gradient(top, #2eb2ff 5%, #0688fa 100%);
+    background: linear-gradient(to bottom, #2eb2ff 5%, #0688fa 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2eb2ff', endColorstr='#0688fa',GradientType=0);
+    background-color: #2eb2ff;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 9px 23px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #263666;
+    margin-top: 2%;
+    width: 100%;
+    font-size: 1.5em;
+    text-align: left;
+    margin-bottom: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 .cadastrar:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2eb2ff));
@@ -174,6 +180,8 @@ img{
 	float: right;
 }
 
+/*===== FIM DO LOGIN =====*/
+/*===== RODAPÉ =====*/
 .rodape { 
   width: 100%; 
   float: left; 
@@ -197,6 +205,10 @@ img{
   color: rgba(0,0,0,0.7);
 }
 
+/*===== FIM DO RODAPÉ =====*/
+
+/*===== RESPONSIVE =====*/
+
 @media screen and (min-width: 500px ){
     .logo {
         width: 214px;
@@ -215,12 +227,13 @@ img{
 	height: 80px;
 	width: 80px;
 }
-.logoTop{
-	width: 200px;
-	height: 200px;
-	background: url(../img/mainline_transparente.png) center center/200px no-repeat;
-	margin-top: -70px;
-}
+    .logoTop {
+        /*width: 200px;
+	    height: 200px;*/
+        width: 214px;
+        background: url(../img/mainline_transparente.png) center center/200px no-repeat;
+        margin-top: -70px;
+    }
 
 .ctd input{
 	width: 80%;
@@ -264,7 +277,7 @@ img{
 	float: right;
 	display: block !important;
 	position: static;
-	background-color: #fff; 
+	/*background-color: #fff;*/ 
 }
 .menu li{
 	padding: 0;
@@ -277,11 +290,6 @@ img{
 	font-size: 1em;
 	padding: 15px;
 }
-
-.fundo{
-	margin-top: -60px;
-}
-
 }
 
 @media screen and (min-width: 1280px ){
@@ -326,3 +334,4 @@ img{
 
 }
 
+/*===== FIM RESPONSIVE ===== */

@@ -91,7 +91,7 @@ img{
             color: #21a3ef;
         } 
 
-.opcoes{
+.btn-menu{
 	width: 56px;
 	height: 56px;
 	float: right;
@@ -102,7 +102,7 @@ img{
 	background: linear-gradient(to right, #21a3ef, #94ceef);	
 }
 
-.close{
+.btn-close{
 	font-size: 1.5em;
 	color: #fff;
 	float: right;
@@ -122,7 +122,7 @@ img{
 .ctd{
 	width: 100%;
 }
-.ctd input{
+.ctd .input{
 	width: 100%;
 	color: #000;
 	padding: 5%;
@@ -215,7 +215,7 @@ img{
         background: url(../img/mainline_transparente.png) center center/150px no-repeat;
     }
 
-.ctd input{
+.ctd .input{
 	width: 100%;
 	padding: 4%;
 }
@@ -223,19 +223,26 @@ img{
 }
 
 @media screen and (min-width: 768px ){
-.opcoes{
+/*.btn-menu{
 	height: 80px;
 	width: 80px;
-}
-    .logoTop {
-        /*width: 200px;
-	    height: 200px;*/
+}*/
+    .cabecalho {
+        width: 100%;
+        float: left;
+        padding: 1% 4%;
+        background-color: #f5f5f5;
+    }
+
+    /*.logo{
+        width: 200px;
+	    height: 200px;
         width: 214px;
         background: url(../img/mainline_transparente.png) center center/200px no-repeat;
         margin-top: -70px;
-    }
+    }*/
 
-.ctd input{
+.ctd .input{
 	width: 80%;
 	padding: 3%;
 }
@@ -250,7 +257,7 @@ img{
 
 @media screen and (min-width: 960px ){
 
-.ctd input{
+.ctd .input{
 	width: 60%;
 	padding: 2%;
 }
@@ -263,22 +270,22 @@ img{
 
 @media screen and (min-width: 1024px ){
 
-.opcoes{
+.btn-menu{
 	display: none;
 }
-.close{
+.btn-close{
 	display: none;
 }
 
-.menu{
-	width: auto;
-	height: 56px;
-	line-height: 56px;
-	float: right;
-	display: block !important;
-	position: static;
-	/*background-color: #fff;*/ 
-}
+    .menu {
+        width: auto;
+        height: 56px;
+        line-height: 56px;
+        float: right;
+        display: block !important;
+        position: static;
+        background-color: #f5f5f5;
+    }
 .menu li{
 	padding: 0;
 	float: left;
@@ -327,7 +334,7 @@ img{
                     color: #21a3ef
                 }
 
-.ctd input{
+.ctd .input{
 	width: 40%;
 	padding: 1.3%;
 }

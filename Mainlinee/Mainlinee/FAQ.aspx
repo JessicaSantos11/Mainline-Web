@@ -29,17 +29,15 @@
 
     <section class="cd-faq">
 	<ul class="cd-faq-categories">
-		<li><a class="selected" href="#basics">Basics</a></li>
-		<li><a href="#mobile">Mobile</a></li>
-		<li><a href="#account">Account</a></li>
-		<li><a href="#payments">Payments</a></li>
-		<li><a href="#privacy">Privacy</a></li>
-		<li><a href="#delivery">Delivery</a></li>
+		<li><a class="selected" href="#basics">Conta</a></li>
+		<li><a href="#mobile">Monitoramento</a></li>
+		<li><a href="#account">Analytics</a></li>
+		<li><a href="#payments">Suporte</a></li>
 	</ul> <!-- cd-faq-categories -->
 
 	<div class="cd-faq-items">
 		<ul id="basics" class="cd-faq-group">
-			<li class="cd-faq-title"><h2>Basics</h2></li>
+			<li class="cd-faq-title"><h2>Conta</h2></li>
 			<li>
 				<a class="cd-faq-trigger" href="#0">How do I change my password?</a>
 				<div class="cd-faq-content">
@@ -70,7 +68,7 @@
 		</ul> <!-- cd-faq-group -->
 
 		<ul id="mobile" class="cd-faq-group">
-			<li class="cd-faq-title"><h2>Mobile</h2></li>
+			<li class="cd-faq-title"><h2>Monitoramento</h2></li>
 			<li>
 				<a class="cd-faq-trigger" href="#0">How does syncing work?</a>
 				<div class="cd-faq-content">
@@ -94,7 +92,7 @@
 		</ul> <!-- cd-faq-group -->
 
 		<ul id="account" class="cd-faq-group">
-			<li class="cd-faq-title"><h2>Account</h2></li>
+			<li class="cd-faq-title"><h2>Analytics</h2></li>
 			<li>
 				<a class="cd-faq-trigger" href="#0">How do I change my password?</a>
 				<div class="cd-faq-content">
@@ -125,7 +123,7 @@
 		</ul> <!-- cd-faq-group -->
 
 		<ul id="payments" class="cd-faq-group">
-			<li class="cd-faq-title"><h2>Payments</h2></li>
+			<li class="cd-faq-title"><h2>Suporte</h2></li>
 			<li>
 				<a class="cd-faq-trigger" href="#0">Can I have an invoice for my subscription?</a>
 				<div class="cd-faq-content">
@@ -148,102 +146,9 @@
 			</li>
 		</ul> <!-- cd-faq-group -->
 
-		<ul id="privacy" class="cd-faq-group">
-			<li class="cd-faq-title"><h2>Privacy</h2></li>
-			<li>
-				<a class="cd-faq-trigger" href="#0">Can I specify my own private key?</a>
-				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quidem delectus rerum eligendi mollitia, repudiandae quae beatae. Et repellat quam atque corrupti iusto architecto impedit explicabo repudiandae qui similique aut iure ipsum quis inventore nulla error aliquid alias quia dolorem dolore, odio excepturi veniam odit veritatis. Quo iure magnam, et cum. Laudantium, eaque non? Tempore nihil corporis cumque dolor ipsum accusamus sapiente aliquid quis ea assumenda deserunt praesentium voluptatibus, accusantium a mollitia necessitatibus nostrum voluptatem numquam modi ab, sint rem.</p>
-				</div> <!-- cd-faq-content -->
-			</li>
+		
 
-			<li>
-				<a class="cd-faq-trigger" href="#0">My files are missing! How do I get them back?</a>
-				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
-				</div> <!-- cd-faq-content -->
-			</li>
-
-			<li>
-				<a class="cd-faq-trigger" href="#0">How can I access my account data?</a>
-				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus magni vero deserunt enim et quia in aliquam, rem tempore voluptas illo nisi veritatis quas quod placeat ipsa! Error qui harum accusamus incidunt at libero ipsum, suscipit dolorum esse explicabo in eius voluptates quidem voluptatem inventore amet eaque deserunt veniam dignissimos excepturi? Dolore, quo amet nostrum autem nemo. Sit nam assumenda, corporis ea sunt distinctio nostrum doloribus alias, beatae nesciunt dolore saepe consequuntur minima eveniet porro dolor officiis maiores ab obcaecati officia enim aliquam. Itaque fuga molestiae hic accusantium atque corporis quia id sequi enim vero? Hic aperiam sint facilis aliquam quia, accusamus tenetur earum totam enim est, error. Iusto, reiciendis necessitatibus molestias. Voluptatibus eos explicabo repellat nesciunt nam vero minima.</p>
-				</div> <!-- cd-faq-content -->
-			</li>
-
-			<li>
-				<a class="cd-faq-trigger" href="#0">How can I control if other search engines can link to my profile?</a>
-				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
-				</div> <!-- cd-faq-content -->
-			</li>
-		</ul> <!-- cd-faq-group -->
-
-		<ul id="delivery" class="cd-faq-group">
-			<li class="cd-faq-title"><h2>Delivery</h2></li>
-			<li>
-				<a class="cd-faq-trigger" href="#0">What should I do if my order hasn't been delivered yet?</a>
-				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quidem delectus rerum eligendi mollitia, repudiandae quae beatae. Et repellat quam atque corrupti iusto architecto impedit explicabo repudiandae qui similique aut iure ipsum quis inventore nulla error aliquid alias quia dolorem dolore, odio excepturi veniam odit veritatis. Quo iure magnam, et cum. Laudantium, eaque non? Tempore nihil corporis cumque dolor ipsum accusamus sapiente aliquid quis ea assumenda deserunt praesentium voluptatibus, accusantium a mollitia necessitatibus nostrum voluptatem numquam modi ab, sint rem.</p>
-				</div> <!-- cd-faq-content -->
-			</li>
-
-			<li>
-				<a class="cd-faq-trigger" href="#0">How can I find your international delivery information?</a>
-				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
-				</div> <!-- cd-faq-content -->
-			</li>
-
-			<li>
-				<a class="cd-faq-trigger" href="#0">Who takes care of shipping?</a>
-				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
-				</div> <!-- cd-faq-content -->
-			</li>
-
-			<li>
-				<a class="cd-faq-trigger" href="#0">How do returns or refunds work?</a>
-				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quidem delectus rerum eligendi mollitia, repudiandae quae beatae. Et repellat quam atque corrupti iusto architecto impedit explicabo repudiandae qui similique aut iure ipsum quis inventore nulla error aliquid alias quia dolorem dolore, odio excepturi veniam odit veritatis. Quo iure magnam, et cum. Laudantium, eaque non? Tempore nihil corporis cumque dolor ipsum accusamus sapiente aliquid quis ea assumenda deserunt praesentium voluptatibus, accusantium a mollitia necessitatibus nostrum voluptatem numquam modi ab, sint rem.</p>
-				</div> <!-- cd-faq-content -->
-			</li>
-
-			<li>
-				<a class="cd-faq-trigger" href="#0">How do I use shipping profiles?</a>
-				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
-				</div> <!-- cd-faq-content -->
-			</li>
-
-			<li>
-				<a class="cd-faq-trigger" href="#0">How does your UK Next Day Delivery service work?</a>
-				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
-				</div> <!-- cd-faq-content -->
-			</li>
-
-			<li>
-				<a class="cd-faq-trigger" href="#0">How does your Next Day Delivery service work?</a>
-				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
-				</div> <!-- cd-faq-content -->
-			</li>
-
-			<li>
-				<a class="cd-faq-trigger" href="#0">When will my order arrive?</a>
-				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
-				</div> <!-- cd-faq-content -->
-			</li>
-
-			<li>
-				<a class="cd-faq-trigger" href="#0">When will my order ship?</a>
-				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
-				</div> <!-- cd-faq-content -->
-			</li>
-		</ul> <!-- cd-faq-group -->
+		
 	</div> <!-- cd-faq-items -->
 	<a href="#0" class="cd-close-panel">Close</a>
 </section> <!-- cd-faq -->

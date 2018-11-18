@@ -23,7 +23,6 @@
                 <a class="btn-close"><i class="fa fa-times"></i></a> 
                 <ul>
                     <li><a href="Default.aspx">Início</a></li>
-                    <li><a href="#">Contato</a></li>
                 </ul>
             </nav>
         </header>
@@ -42,10 +41,10 @@
     </form>
     <footer class="rodape">
             <div class="social-icons">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-envelope"></i></a>
+                <a href="https://www.facebook.com/mainlinemonitoramento/" target="_blank"><i class="fa fa-facebook" target="_blank"></i></a>
+			    <a href="https://twitter.com/MainlineMonito1" target="_blank"><i class="fa fa-twitter"></i></a>
+			    <a href="https://www.instagram.com/mainlinemonitoramento/" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="mailto:mainline2018@hotmail.com"><i class="fa fa-envelope"></i></a>
             </div>
             <p class="copyright"> 
                 Copyright © Mainline 2018. Todos os direitos reservados. </p>

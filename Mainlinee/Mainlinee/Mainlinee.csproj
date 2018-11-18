@@ -84,8 +84,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cadastro.aspx" />
-    <Content Include="css\cadastro.css" />
     <Content Include="css\default.css" />
     <Content Include="css\login2.css" />
     <Content Include="css\reset.css" />
@@ -108,6 +106,7 @@
     <Content Include="img\mainline.png" />
     <Content Include="img\mainline_transparente.png" />
     <Content Include="img\mbranco_transparente.png" />
+    <Content Include="img\metrobgtop.jpg" />
     <Content Include="img\monitoramento.jpeg" />
     <Content Include="img\monitoramento2.jpeg" />
     <Content Include="img\monitoramento3.jpeg" />
@@ -131,13 +130,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Cadastro.aspx.cs">
-      <DependentUpon>Cadastro.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Cadastro.aspx.designer.cs">
-      <DependentUpon>Cadastro.aspx</DependentUpon>
-    </Compile>
     <Compile Include="CnxSql.cs" />
     <Compile Include="FAQ.aspx.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>

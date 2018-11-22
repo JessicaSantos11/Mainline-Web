@@ -31,15 +31,6 @@ namespace Mainlinee {
         protected global::System.Web.UI.WebControls.TextBox txtnome;
         
         /// <summary>
-        /// Controle txtemail.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtemail;
-        
-        /// <summary>
         /// Controle txttelefone.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,24 @@ namespace Mainlinee {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txttelefone;
+        
+        /// <summary>
+        /// Controle isADM.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList isADM;
+        
+        /// <summary>
+        /// Controle txtemail.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtemail;
         
         /// <summary>
         /// Controle txtsenha.

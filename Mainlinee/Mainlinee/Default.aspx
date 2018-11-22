@@ -25,7 +25,6 @@
 				<a class="btn-close"><i class="fa fa-times"></i></a> <!-- é o link para fechar o menu. o "x" irá fechar o menu-->
 				<ul>
 					<li><a href="Login2.aspx">Login</a></li>
-					<li><a href="#">Contato</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -34,8 +33,7 @@
 		<!-- criação de um BG -->
 		<div class="banner">
 			<div class="title">
-				<h2> Faça uso consciente do seu computador.</h2>
-				<h3> Deixe a mainline simplicar para você! </h3>
+				<h2> Fique de olho nos seus dispositivos de hardware em qualquer lugar!</h2>
 			</div>
 		</div>
 		<div class="servicos1"><h1>Nossos serviços</h1></div>
@@ -46,9 +44,8 @@
 					<img src="img/monitoramento3.jpeg" alt="Monitoramento de Hardware" />
 					<div class="inner"> 
 						<a> Monitoramento de Hardware </a>
-						<h4> Lorem ipsum dolor sit amet </h4>
-						<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed mauris interdum, auctor tellus non, eleifend eros. In mattis metus eget tortor viverra hendrerit. Cras porttitor lectus diam, 
-							id malesuada elit. Nam fringilla, felis pulvinar posuere lobortis ex lacus ullamcorper. </p>
+						<p> O monitoramento é necessário para que você possa ser alertado a tempo, isso permitirá que você redistribua a carga entre os componentes antes que os servidores se engarrafem ou caiam. 
+                            Nosso software monitora componentes como CPU, HD, memória RAM e rede, e o acesso às informações de monitoramento é compatível com diversos dispositivos</p>
 					</div>
 				</article>
 				<!-- serviço 2 -->
@@ -56,8 +53,9 @@
 					<img src="img/analytics.jpg" alt="Analytics" />
 					<div class="inner"> 
 						<a> Analytics </a>
-						<h4> Lorem ipsum dolor sit amet </h4>
-						<p> Nam fringilla, felis pulvinar posuere lobortis, ex lacus ullamcorper erat, sit amet fringilla urna sapien vel ligula. Phasellus fringilla nulla eu luctus mattis. Suspendisse mattis porta ornare. Nulla congue sed libero id maximus. Duis blandit eros eget neque molestie viverra. Nullam non scelerisque. phasellu.</p>
+						<p> Você pode não saber, mas a relação entre o tempo gasto em ações práticas e na análise de dados pode ser uma grande questão para o seu negócio. 
+                            Fornecemos um painel interativo e integrado com o PowerBI da Microsoft onde você pode ter uma visão geral do histórico do seu monitoramento e traçar estratégias 
+                            para melhorar o uso do seu hardware e melhorar os custos para o seu negócio. </p>
 					</div>
 				</article>
 				<!-- serviço 3 -->
@@ -65,8 +63,9 @@
 					<img src="img/suporte.jpg" alt="Suporte" />
 					<div class="inner"> 
 						<a> Suporte </a>
-						<h4> Sites administráveis </h4>
-						<p> Praesent scelerisque malesuada tellus non tincidunt. Nunc vehicula efficitur luctus. Sed laoreet ullamcorper sagittis. Aenean facilisis vitae ex in eleifend. Mauris elementum ligula non dui consequat feugiat. In feugiat in dui et congue. Pellentesque porta nulla et volutpat iaculis. </p>
+						<p> Oferecemos suporte para seus problemas com a aplicação e uso do hardware com analistas capacitados que prestam atendimento rápido e eficaz. 
+                            Os chamados podem ser abertos através de e-mails e mensagem em nosso site. 
+                            Nosso horário de atendimento inicialmente é em horário comercial, podendo haver alterações de acordo com a necessidade do cliente. </p>
 					</div>
 				</article>
 			</main>
@@ -74,8 +73,10 @@
 			<div id="sobre">			
 				<div class="historia">
 					<h1>Como tudo começou...</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed mauris interdum, auctor tellus non, eleifend eros. In mattis metus eget tortor viverra hendrerit. Cras porttitor lectus diam, 
-							id malesuada elit. Nam fringilla, felis pulvinar posuere lobortis ex lacus ullamcorper.</p>
+						<p> A Mainline é uma empresa de pequeno porte criada em 2018 por quatro estudantes do curso de análise e desenvolvimento de sistemas. 
+                            Analisando o mercado, encontramos uma grande oportunidade de unir monitoramento de hardware de qualidade ao ramo de transporte metroviário,
+                            prevendo e solucionando problemas graves evitando falhas que possam impactar o transporte de passageiros. 
+                            Temos como missão: proporcionar.... Temos como visão: .... Temos como valores:... Você pode conhecer nossa equipe abaixo: </p>
 					</div>			
 				<img class="logot" src="img/mbranco_transparente.png" width="400px" height="400px"/>
 					
@@ -89,8 +90,8 @@
 						<h1>Jéssica Santos</h1>
 						<p> Scrum Master/ Desenvolvimento </p>
 						<div class="contatos">
-								<a href="https://www.linkedin.com/in/j%C3%A9ssica-santos-44a53a121/"><img src="img/linkedin.png" width="50px" height="50px" /></a>
-								<a href="https://github.com/JSantosss"><img src="img/github.png" width="50px" height="50px" /></a>
+								<a href="https://www.linkedin.com/in/j%C3%A9ssica-santos-44a53a121/" target="_blank"><img src="img/linkedin.png" width="50px" height="50px" /></a>
+								<a href="https://github.com/JSantosss" target="_blank"><img src="img/github.png" width="50px" height="50px" /></a>
 							</div>
 					</div>
 					<div class="prince">
@@ -98,8 +99,8 @@
 						<h1>Gustavo Prince</h1>
 						<p> Product Owner/ Desenvolvimento</p>
 						<div class="contatos">
-								<a href="https://www.linkedin.com/in/gustavo-prince-335269144/"><img src="img/linkedin.png" width="50px" height="50px" /></a>
-								<a href="#"><img src="img/github.png" width="50px" height="50px" /></a>
+								<a href="https://www.linkedin.com/in/gustavo-prince-335269144/" target="_blank"><img src="img/linkedin.png" width="50px" height="50px" /></a>
+								<a href="https://github.com/Gprince00" target="_blank"><img src="img/github.png" width="50px" height="50px" /></a>
 							</div>
 					</div>
 					<div class="wesley">
@@ -107,8 +108,8 @@
 						<h1>Wesley Marques</h1>
 						<p>Desenvolvimento</p>
 						<div class="contatos">
-								<a href="#"><img src="img/linkedin.png" width="50px" height="50px" /></a>
-								<a href="#"><img src="img/github.png" width="50px" height="50px" /></a>
+								<a href="#" target="_blank"><img src="img/linkedin.png" width="50px" height="50px" /></a>
+								<a href="https://github.com/wesley49" target="_blank"><img src="img/github.png" width="50px" height="50px" /></a>
 							</div>
 					</div>
 					<div class="natanael">
@@ -116,8 +117,8 @@
 						<h1>Natanael Weslley</h1>
 						<p>Desenvolvimento</p>
 						<div class="contatos">
-								<a href="https://www.linkedin.com/in/natanael-weslley-0854aa150/"><img src="img/linkedin.png" width="50px" height="50px" /></a>
-								<a href="https://github.com/NatalNW/"><img src="img/github.png" width="50px" height="50px" /></a>
+								<a href="https://www.linkedin.com/in/natanael-weslley-0854aa150/" target="_blank"><img src="img/linkedin.png" width="50px" height="50px" /></a>
+								<a href="https://github.com/NatalNW/" target="_blank"><img src="img/github.png" width="50px" height="50px" /></a>
 							</div>
 					</div>
 				</div>
@@ -126,9 +127,10 @@
 		<!-- fim da navegação dos serviços -->
 		<footer class="rodape">
 		<div class="social-icons">
-			<a href="#"><i class="fa fa-facebook"></i></a>
-			<a href="#"><i class="fa fa-twitter"></i></a>
-			<a href="#"><i class="fa fa-instagram"></i></a>
+			<a href="https://www.facebook.com/mainlinemonitoramento/" target="_blank"><i class="fa fa-facebook" target="_blank"></i></a>
+			<a href="https://twitter.com/MainlineMonito1" target="_blank"><i class="fa fa-twitter"></i></a>
+			<a href="https://www.instagram.com/mainlinemonitoramento/" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="mailto:mainline2018@hotmail.com"><i class="fa fa-envelope"></i></a>
 		</div>
 		<p class="copyright"> 
 			Copyright © Mainline 2018. Todos os direitos reservados. </p>

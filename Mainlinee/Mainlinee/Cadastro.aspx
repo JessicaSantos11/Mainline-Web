@@ -34,25 +34,30 @@
         <div class="fundo">
 		<div class="ctd">
 			<h2>Nome</h2>
-            <asp:TextBox ID="txtnome" runat="server" placeholder="Nome Completo"></asp:TextBox>
-			<h2>E-mail</h2>
-            <asp:TextBox ID="txtemail" runat="server" placeholder="E-mail"></asp:TextBox>
+            <asp:TextBox CssClass="input" ID="txtnome" runat="server" placeholder="Nome Completo" required></asp:TextBox>
 			<h2>Telefone</h2>
-            <asp:TextBox ID="txttelefone" runat="server" placeholder="Telefone"></asp:TextBox>
+             <asp:TextBox CssClass="input" ID="txttelefone" runat="server" placeholder="Telefone" required></asp:TextBox>
+             <h2>Nível de usuário</h2>
+                <asp:DropDownList CssClass="input" runat="server" ID="isADM">
+                    <asp:ListItem Value=null Text="--Selecione seu nível" />
+                    <asp:ListItem Value=1 Text="ADM" />
+                    <asp:ListItem Value=0 Text="NOC" />
+                </asp:DropDownList>
+            <h2>E-mail</h2>
+            <asp:TextBox CssClass="input" ID="txtemail" runat="server" placeholder="E-mail" required></asp:TextBox>
 			<h2>Senha</h2>
-            <asp:TextBox ID="txtsenha" runat="server" placeholder="Senha"></asp:TextBox>
+            <asp:TextBox CssClass="input" ID="txtsenha" runat="server" placeholder="Senha" required></asp:TextBox>
 			<h2>Confirmar Senha</h2>
-            <asp:TextBox ID="txtconfSenha" runat="server" placeholder="Confirmar Senha"></asp:TextBox>
+            <asp:TextBox CssClass="input" ID="txtconfSenha" runat="server" placeholder="Confirmar Senha" required></asp:TextBox>
 		</div>
-		<button class="cadastrar"> Cadastrar <i class="fa fa-arrow-circle-right"></i></button>
-            <asp:Button ID="btn_cadastrar" runat="server" Text="Button" />
+		<%--<button class="cadastrar"> Cadastrar <i class="fa fa-arrow-circle-right"></i></button>--%>
+            <asp:Button Text="Cadastrar" CssClass="cadastrar" ID="btn_cadastrar" OnClick="btn_cadastrar_Click" runat="server"  />
 	</div>
     </form>
     <footer class="rodape">
 		<div class="social-icons">
 			<a href="#"><i class="fa fa-facebook"></i></a>
-			<a href="#"><i class="fa fa-twitter"></i></a>
-			<a href="#"><i class="fa fa-google"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>			
 			<a href="#"><i class="fa fa-instagram"></i></a>
 			<a href="#"><i class="fa fa-envelope"></i></a>
 		</div>

@@ -84,7 +84,7 @@ img {
 }
 .menu li a {
   font-size: 2em; 
-  color: #fff; 
+  color: #ff8300; 
   padding: 1.5% 3%; 
   font-weight: 700;
 }
@@ -94,21 +94,29 @@ img {
 
 /* BANNER */
 .banner {
-  width: 100%; 
-  float: left; 
-  text-align: center; 
-  padding: 10% 4%; 
-  background: url(../img/bg2.jpg) no-repeat fixed;
-  margin-bottom: 20px;
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding: 10% 4%;
+    background: url(../img/metrobgtop.jpg) no-repeat fixed;
+    margin-bottom: 20px;
+    opacity: 0.80;
 }
 .title {
   width: 100%;
 }
+
 .title h2 {
-  font-size: 2.5em; color: #fff; font-weight: 700;
+        font-size: 2.5em;
+        color: #fff;
+        font-weight: 700;
+        margin-left: 15px;
 }
+
 .title h3 {
-  font-size: 1.5em; color: #fff;
+  font-size: 1.5em; 
+  color: #fff;
+  margin-left: 15px;
 }
 .buttons {
   width: 100%; margin-top: 2%;
@@ -167,7 +175,7 @@ img {
 
 #sobre{
   width:100%; 
-  min-height:50px; 
+  min-height:900px; 
   display: flex; 
   margin-top: 20px; 
   background-color: #000;
@@ -218,45 +226,57 @@ img {
   margin-top: 20px;
   margin-left: 30px;
 }
+
 .eu h1{
   font-size: 1.5em; 
   color: #000; 
   font-weight: 700;
   margin-left: 30px;
 }
+
 .eu p {
   font-weight: 700; 
   margin-left: 30px;
+  margin-bottom: 10px;
 }
+
 .prince h1{
   font-size: 1.5em; 
   color: #000; 
   font-weight: 700;
   margin-left: 30px;
 }
+
 .prince p {
-  font-weight: 700;
-  margin-left: 30px;
+    font-weight: 700;
+    margin-left: 30px;
+    margin-bottom: 10px;
 }
+
 .natanael h1{
   font-size: 1.5em; 
   color: #000; 
   font-weight: 700; 
   margin-left: 30px;
 }
+
 .natanael p {
-  font-weight: 700; 
-  margin-left: 30px;
+    font-weight: 700;
+    margin-left: 30px;
+    margin-bottom: 10px;
 }
+
 .wesley h1{
   font-size: 1.5em; 
   color: #000; 
   font-weight: 700; 
   margin-left: 30px;
 }
+
 .wesley p {
-  font-weight: 700; 
-  margin-left: 30px;
+    font-weight: 700;
+    margin-left: 30px;
+    margin-bottom: 10px;
 }
 
 .contatos {
@@ -265,7 +285,7 @@ img {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-left: 14px;
+    margin-left: -10px;
 }
 .contatos > img{
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -627,6 +647,14 @@ img {
         .logo {
             width: 214px;
             background: url(../img/mainline_transparente.png) center center/150px no-repeat;
+        }
+
+        #sobre {
+            width: 100%;
+            min-height: 500px;
+            display: flex;
+            margin-top: 20px;
+            background-color: #000;
         }
     }
 

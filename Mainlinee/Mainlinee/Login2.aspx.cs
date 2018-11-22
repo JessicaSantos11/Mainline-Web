@@ -13,10 +13,12 @@ namespace Mainlinee
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            /*
             if (Session["Usuario"] != null)
             {
-                Response.Redirect("dashboard.aspx");
-            }
+                Response.Redirect("dashboard2.aspx");
+            }*/
         }
 
         protected void btnLogar_Click(object sender, EventArgs e)
@@ -46,9 +48,10 @@ namespace Mainlinee
                     user.nome = reader["nome"].ToString();
                     user.telefone = reader["telefone"].ToString();
                     user.isAdm = bool.Parse(reader["isADM"].ToString());
-                    Session["Usuario"] = user;
+                    Session["Usuario"] = user.idUser;
+                    Session["nomeUser"] = user.nome;
 
-                    Response.Redirect("dashboard.aspx");
+                    Response.Redirect("dashboard2.aspx");
                 }
                 else
                 {

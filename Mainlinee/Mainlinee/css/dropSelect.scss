@@ -1,0 +1,78 @@
+/***
+ * dropSelect jQuery Plugin
+ * (c) Craig Holden
+ * http://tecktron.github.io/dropSelect/
+ * MIT License - Please keep this header.
+***/
+.dropSelect {
+  position: relative;
+  display: inline-block;
+  /* border: #000 solid thin;
+  background-color: #ccc;
+  color: #C00;*/
+  cursor: pointer;
+  font-size: 18px;
+  vertical-align: middle;
+
+  &:hover {
+    /*background-color: #07c;
+    color: #EE0*/
+
+    div.items {
+      display: block;
+      /*border-top: thin solid #000;*/
+    }
+  }
+
+  div {
+    .selected {
+      height: 100%;
+      line-height: 2rem;
+      padding: 1rem 3rem 1rem 1rem;
+    }
+
+    .icon-arrow-down {
+      display: block;
+      font-size: 0.7rem;
+      position: absolute;
+      background: transparent none repeat scroll 0 0;
+      right: 1.3rem;
+      top: 1.4rem;
+
+      &::after {
+        content: "▼";
+      }
+    }
+
+    .items {
+      display: none;
+      overflow-y: auto;
+      /* show 4 items. to show 3, change the multiplier to 3 */
+      height: calc(4rem * 4);
+      background: inherit;
+      width: inherit;
+      position: absolute;
+      border: inherit;
+      margin-left: -1px;
+
+      a {
+        display: block;
+        height: 2rem;
+        line-height: 2rem;
+        padding: 1rem;
+        white-space: nowrap;
+
+        .active {
+          /*background-color: #666;*/
+          cursor: default;
+          /*color: #ccc;*/
+        }
+
+        &:not(.active):hover {
+          /*background-color: #666;*/
+          /*color: #FFF;*/
+        }
+      }
+    }
+  }
+}

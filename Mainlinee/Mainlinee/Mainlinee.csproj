@@ -84,7 +84,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Cadastro.aspx" />
     <Content Include="charts.aspx" />
+    <Content Include="css\cadastro.css" />
     <Content Include="css\custom.css" />
     <Content Include="css\dataTable.min.css" />
     <Content Include="css\default.css" />
@@ -274,6 +276,13 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Ativo.cs" />
+    <Compile Include="Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="charts.aspx.cs">
       <DependentUpon>charts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

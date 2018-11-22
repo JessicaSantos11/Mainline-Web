@@ -1,0 +1,9 @@
+/* your styles go here */
+
+.esconder{
+  display: none;
+}
+
+.centralizar{
+  margin: auto;
+}

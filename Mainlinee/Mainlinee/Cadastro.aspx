@@ -24,8 +24,7 @@
 			<nav class="menu">
 				<a class="btn-close"><i class="fa fa-times"></i></a> <!-- é o link para fechar o menu. o "x" irá fechar o menu-->
 				<ul>
-					<li><a href="#">Início</a></li>
-					<li><a href="#">Contato</a></li>
+					<li><a href="Default.aspx">Início</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -46,14 +45,12 @@
             <h2>E-mail</h2>
             <asp:TextBox CssClass="input" ID="txtemail" TextMode="Email" runat="server" placeholder="Ex: mainline@gmail.com" required></asp:TextBox>
 			<h2>Senha</h2>
-            <asp:TextBox CssClass="input" type="password" ID="txtsenha" runat="server" placeholder="Digite uma senha segura" required></asp:TextBox>
-			<br>
-           <button type="button" onclick="mostrarSenha();">Mostrar senha</button>
-            <br>
-           <button type="button" onclick="esconderSenha();"> senha</button>
+            <asp:TextBox CssClass="input" type="password" ID="txtSenha" runat="server" placeholder="Digite uma senha segura" required></asp:TextBox>
             <h2>Confirmar Senha</h2>
             <asp:TextBox CssClass="input" ID="txtconfSenha" TextMode="Password" runat="server" placeholder="Confirme sua senha" required></asp:TextBox>
-		</div>
+		    <br>
+            <img src="img/olho.png" height="42" width="42" onclick=" mostrarSenha();" style="cursor: pointer;">
+        </div>
 		<!--<button class="cadastrar"> Cadastrar <i class="fa fa-arrow-circle-right"></i></button>-->
             <asp:Button Text="Cadastrar" CssClass="cadastrar" ID="btn_cadastrar" OnClick="btn_cadastrar_Click" runat="server"  />
 	</div>
@@ -71,43 +68,5 @@
 </body>
 </html>
  <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script type="text/javascript">
-    function mostrarSenha() {
-        var tipo = document.getElementById('txtsenha');
-        if (tipo.type == 'password') {
-            tipo.type = 'text';
-        } else {
-            tipo.type == 'password';
-        }
-    }
-    function esconderSenha(){
-        var tipo = document.getElementById('txtsenha');
-        if ( tipo.type = 'text') {
-            tipo.type == 'password';
-        }
-    }
-</script>
-
 <script src="js/jquery.maskedinput.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-    $(function() {
-        $.mask.definitions['~'] = "[+-]";
-        $("#txttelefone").mask("(99) 99999-9999");
-
-        $("input").blur(function() {
-            $("#info").html("Unmasked value: " + $(this).mask());
-        }).dblclick(function() {
-            $(this).unmask();
-        });
-    });
-
-	$(document).ready(function(){
-	    $(".btn-menu").click(function(){
-  	        $(".menu").show();
-	    });
-	    $(".btn-close").click(function(){
- 	        $(".menu").hide();
-	    });
-    });﻿
-
-    </script>
+<script type="text/javascript" src="js/textBoxEbtn.js"></script>

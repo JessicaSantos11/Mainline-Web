@@ -34,6 +34,8 @@
                 <asp:TextBox runat="server" CssClass="input" TextMode="Email" placeholder="Digite seu email" ID="txtEmail" required/>
                 <h2>Senha</h2>
                 <asp:TextBox runat="server" CssClass="input" TextMode="Password" placeholder="Digite sua senha" ID="txtSenha" required/>
+                <br>
+                <img src="img/olho.png" height="42" width="42" onclick=" mostrarSenhaL();" style="cursor: pointer;">
             </div>
             <asp:Button Text="Login" CssClass="logar" ID="btnLogar" OnClick="btnLogar_Click" runat="server" />
             <div class="cadastrolink"><a href="#"><h1>Não possui uma conta? Cadastre-se</h1></a></div>
@@ -49,21 +51,8 @@
             <p class="copyright"> 
                 Copyright © Mainline 2018. Todos os direitos reservados. </p>
     </footer>
-
-    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-		<script type="text/javascript">
-			
-            $(document).ready(function () {
-                $(".btn-menu").click(function () {
-                    $(".menu").show();
-                });
-
-                $(".btn-close").click(function () {
-                    $(".menu").hide();
-                });
-            });﻿
-
-	</script>
-
 </body>
 </html>
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="js/jquery.maskedinput.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/textBoxEbtn.js"></script>

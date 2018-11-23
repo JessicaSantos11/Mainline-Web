@@ -23,7 +23,7 @@ namespace Mainlinee
         {
             CnxSql cnxSql = new CnxSql();
             string sqlCommand = "INSERT INTO Usuario (nome, telefone, email, senha, isADM) VALUES (@nome, @telefone, @email, @senha, @isADM)";
-            if (txtsenha.Text == txtconfSenha.Text)
+            if (txtSenha.Text == txtconfSenha.Text)
             {
                 if (isADM.Text != "null")
                 {
@@ -35,7 +35,7 @@ namespace Mainlinee
                         cmd.Parameters.AddWithValue("@nome", txtnome.Text);
                         cmd.Parameters.AddWithValue("@telefone", txttelefone.Text);
                         cmd.Parameters.AddWithValue("@email", txtemail.Text);
-                        cmd.Parameters.AddWithValue("@senha", txtsenha.Text);
+                        cmd.Parameters.AddWithValue("@senha", txtSenha.Text);
                         cmd.Parameters.AddWithValue("@isADM", isADM.Text);
 
                         cmd.ExecuteNonQuery();

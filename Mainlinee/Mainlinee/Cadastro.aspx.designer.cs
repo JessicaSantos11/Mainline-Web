@@ -58,13 +58,13 @@ namespace Mainlinee {
         protected global::System.Web.UI.WebControls.TextBox txtemail;
         
         /// <summary>
-        /// Controle txtsenha.
+        /// Controle txtSenha.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtsenha;
+        protected global::System.Web.UI.WebControls.TextBox txtSenha;
         
         /// <summary>
         /// Controle txtconfSenha.

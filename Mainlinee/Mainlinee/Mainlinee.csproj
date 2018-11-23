@@ -135,13 +135,14 @@
     <Content Include="img\natal.jpg" />
     <Content Include="img\oie.png" />
     <Content Include="img\oie2.png" />
+    <Content Include="img\olho.png" />
     <Content Include="img\prince.JPG" />
     <Content Include="img\suporte.jpg" />
     <Content Include="img\voce-sabe-como-fazer-o-monitoramento-de-rede-da-sua-empresa.jpg" />
     <Content Include="img\wesley.jpg" />
     <Content Include="js\bootstrap-dropselect.min.js" />
     <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\cadastro.js" />
+    <Content Include="js\textBoxEbtn.js" />
     <Content Include="js\Chart.js" />
     <Content Include="js\chartjs-plugin-zoom.js" />
     <Content Include="js\charts-custom.js" />
@@ -155,7 +156,11 @@
     <Content Include="js\grasp_mobile_progress_circle-1.0.0.min.js" />
     <Content Include="js\grasp_mobile_progress_circle-10.0.0.min.js" />
     <Content Include="js\hammer.min.js" />
+    <None Include="js\jquery-2.1.1.intellisense.js" />
     <Content Include="js\jquery-2.1.1.js" />
+    <Content Include="js\jquery-2.1.1.min.js" />
+    <Content Include="js\jquery.maskedinput.js" />
+    <Content Include="js\jquery.maskedinput.min.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\jquery.mobile.custom.min.js" />
     <Content Include="js\loading.js" />
@@ -348,6 +353,7 @@
     <Content Include="vendor\font-awesome\fonts\FontAwesome.otf" />
     <Content Include="vendor\jquery.cookie\component.json" />
     <Content Include="vendor\jquery.cookie\cookie.jquery.json" />
+    <Content Include="js\jquery-2.1.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

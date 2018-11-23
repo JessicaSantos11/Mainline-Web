@@ -24,8 +24,7 @@
 			<nav class="menu">
 				<a class="btn-close"><i class="fa fa-times"></i></a> <!-- é o link para fechar o menu. o "x" irá fechar o menu-->
 				<ul>
-					<li><a href="#">Início</a></li>
-					<li><a href="#">Contato</a></li>
+					<li><a href="Default.aspx">Início</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -34,23 +33,25 @@
         <div class="fundo">
 		<div class="ctd">
 			<h2>Nome</h2>
-            <asp:TextBox CssClass="input" ID="txtnome" runat="server" placeholder="Nome Completo" required></asp:TextBox>
-			<h2>Telefone</h2>
-             <asp:TextBox CssClass="input" ID="txttelefone" runat="server" placeholder="Telefone" required></asp:TextBox>
+            <asp:TextBox CssClass="input" ID="txtnome" runat="server" placeholder="Ex: Alan da Silva" required></asp:TextBox>
+			<h2>Telefone celular</h2>
+             <asp:TextBox CssClass="input" ID="txttelefone" runat="server" placeholder="Ex: (99) 99999-9999" MaxLength="15" required></asp:TextBox>
              <h2>Nível de usuário</h2>
-                <asp:DropDownList CssClass="input" runat="server" ID="isADM">
-                    <asp:ListItem Value=null Text="--Selecione seu nível" />
+                <asp:DropDownList CssClass="input" runat="server" ID="isADM" required>
+                    <asp:ListItem Value=null Text="-- Selecione seu nível --" />
                     <asp:ListItem Value=1 Text="ADM" />
                     <asp:ListItem Value=0 Text="NOC" />
                 </asp:DropDownList>
             <h2>E-mail</h2>
-            <asp:TextBox CssClass="input" ID="txtemail" runat="server" placeholder="E-mail" required></asp:TextBox>
+            <asp:TextBox CssClass="input" ID="txtemail" TextMode="Email" runat="server" placeholder="Ex: mainline@gmail.com" required></asp:TextBox>
 			<h2>Senha</h2>
-            <asp:TextBox CssClass="input" ID="txtsenha" runat="server" placeholder="Senha" required></asp:TextBox>
-			<h2>Confirmar Senha</h2>
-            <asp:TextBox CssClass="input" ID="txtconfSenha" runat="server" placeholder="Confirmar Senha" required></asp:TextBox>
-		</div>
-		<%--<button class="cadastrar"> Cadastrar <i class="fa fa-arrow-circle-right"></i></button>--%>
+            <asp:TextBox CssClass="input" type="password" ID="txtSenha" runat="server" placeholder="Digite uma senha segura" required></asp:TextBox>
+            <h2>Confirmar Senha</h2>
+            <asp:TextBox CssClass="input" ID="txtconfSenha" TextMode="Password" runat="server" placeholder="Confirme sua senha" required></asp:TextBox>
+		    <br>
+            <img src="img/olho.png" height="42" width="42" onclick=" mostrarSenha();" style="cursor: pointer;">
+        </div>
+		<!--<button class="cadastrar"> Cadastrar <i class="fa fa-arrow-circle-right"></i></button>-->
             <asp:Button Text="Cadastrar" CssClass="cadastrar" ID="btn_cadastrar" OnClick="btn_cadastrar_Click" runat="server"  />
 	</div>
     </form>
@@ -64,18 +65,8 @@
 		<p class="copyright"> 
 			Copyright © Mainline 2018. Todos os direitos reservados. </p>
 		</footer>
-    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-		<script>
-			$(document).ready(function(){
-        	$(".btn-menu").click(function(){
-          	$(".menu").show();
-        	});
-        	$(".btn-close").click(function(){
-         	$(".menu").hide();
-        	});
-         	});﻿
-	</script>
-
-
 </body>
 </html>
+ <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="js/jquery.maskedinput.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/textBoxEbtn.js"></script>

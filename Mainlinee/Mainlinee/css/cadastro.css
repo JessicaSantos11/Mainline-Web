@@ -18,8 +18,9 @@ a{
 ul{
 	list-style: none;
 }
-img{
-	max-width: 100%;
+img {
+    max-width: 100%;
+    margin-right: -47px;
 }
 
 /*CABEÇALHO*/

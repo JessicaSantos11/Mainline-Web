@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=divice-width, intial-scale=1"/>
 	<title>Cadastre-se | Mainline</title>
 	<link rel="icon" href="img/M_transparente.png"/>
-	<link rel="stylesheet" type="text/css" href="CSS/cadastro.css"/>
+	<link rel="stylesheet" type="text/css" href="css/cadastro.css"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type='text/css'/>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -48,7 +48,6 @@
             <asp:TextBox CssClass="input" type="password" ID="txtSenha" runat="server" placeholder="Digite uma senha segura" required></asp:TextBox>
             <h2>Confirmar Senha</h2>
             <asp:TextBox CssClass="input" ID="txtconfSenha" TextMode="Password" runat="server" placeholder="Confirme sua senha" required></asp:TextBox>
-		    <br>
             <img src="img/olho.png" height="42" width="42" onclick=" mostrarSenha();" style="cursor: pointer;">
         </div>
 		<!--<button class="cadastrar"> Cadastrar <i class="fa fa-arrow-circle-right"></i></button>-->

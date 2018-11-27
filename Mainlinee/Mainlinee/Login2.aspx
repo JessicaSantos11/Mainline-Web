@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=divice-width, intial-scale=1"/>
 	<title> Login | Mainline </title>
 	<link rel="icon" href="img/M_transparente.png"/>
-	<link rel="stylesheet" type="text/css" href="CSS/login2.css"/>
+	<link rel="stylesheet" type="text/css" href="css/login2.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type='text/css'/>	
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -31,14 +31,13 @@
         <div class="login">
             <div class="login-campos">
                 <h2>E-mail</h2>
-                <asp:TextBox runat="server" CssClass="input" TextMode="Email" placeholder="Digite seu email" ID="txtEmail" required/>
+                <asp:TextBox runat="server" CssClass="input" TextMode="Email" placeholder="Ex: mainline@gmail.com" ID="txtEmail" required/>
                 <h2>Senha</h2>
-                <asp:TextBox runat="server" CssClass="input" TextMode="Password" placeholder="Digite sua senha" ID="txtSenha" required/>
-                <br>
+                <asp:TextBox runat="server" CssClass="input" TextMode="Password" placeholder="Digite sua senha de cadastro" ID="txtSenha" required/>
                 <img src="img/olho.png" height="42" width="42" onclick=" mostrarSenhaL();" style="cursor: pointer;">
             </div>
             <asp:Button Text="Login" CssClass="logar" ID="btnLogar" OnClick="btnLogar_Click" runat="server" />
-            <div class="cadastrolink"><a href="#"><h1>Não possui uma conta? Cadastre-se</h1></a></div>
+            <div class="cadastrolink"><h1>Não possui uma conta?</h1><a href="Cadastro.aspx">Cadastre-se</a></div>
         </div>
     </form>
     <footer class="rodape">

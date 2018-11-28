@@ -165,8 +165,8 @@
             //console.log("teste se ta indo" + dados[0]);
 
             config.data.datasets.forEach(function (dataset) {
-                dataset.data.push(dados[0]);
-                console.log("teste se ta indo" + dados[0]);
+                dataset.data.push(dados[2]);
+                console.log("teste se ta indo" + dados[2]);
             });
                         
                     
@@ -182,7 +182,7 @@
         setInterval(() => {
             try {
   
-               PegarDados(numeros[0]);
+               PegarDados(numeros);
               
             } catch (err) { console.log(err); }
         }, 2000);

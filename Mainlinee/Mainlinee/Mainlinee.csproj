@@ -103,6 +103,7 @@
     <Content Include="dashboard2.aspx" />
     <Content Include="FAQ.aspx" />
     <Content Include="fonts\dashboard.svg" />
+    <Content Include="getOshi.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Default.aspx" />
     <Content Include="icons-reference\fonts\dashboard.svg" />
@@ -295,6 +296,13 @@
     </Compile>
     <Compile Include="FAQ.aspx.designer.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="getOshi.aspx.cs">
+      <DependentUpon>getOshi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="getOshi.aspx.designer.cs">
+      <DependentUpon>getOshi.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

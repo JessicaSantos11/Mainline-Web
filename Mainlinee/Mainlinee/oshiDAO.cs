@@ -224,15 +224,16 @@ namespace Mainlinee
 
         //metodo para pegar a porcentagem do banco
 
-        public static string getNumeros()
+        public static string getNumeros(String idHD)
         {
             //cria a string q vai guardar os dados do bando
             string text = "";
 
+
             //chama os metodos e retorna o valor deles dentro da string
             //text += new oshiDAO().selectRam2() + "+";
             //text += new oshiDAO().selectCPU2() + "+";
-            // text += new oshiDAO().selectHD2();
+            text += new oshiDAO().selectHD2(idHD)[0].hd;
 
             //cria uma variavel q corta a string text e coloca eles dentro de um array
             string[] textSplit = text.Split('+');

@@ -39,20 +39,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/pages/home.js"></script>
 
-    <script>
-        /*global $, document, LINECHARTEXMPLE*/
-        
-        //essa parte executa a função a cada 10 segundos
-        /*
-        setInterval(() => {
-            try {
-  
-                    pegarDados(idMaquina);
-              
-            } catch (err) { console.log(err); }
-        }, 1000);*/
-
-    </script>
+    
 </head>
 <body>
     
@@ -125,6 +112,7 @@
                                 {
 
                                     String id = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()))[cont].id;
+                                    Session["idAtivo"] = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()))[cont].id;
                             %>
                     <figure class="figure">
                         <a href="charts.aspx?id=<%=id %>">

@@ -94,6 +94,7 @@
     <Content Include="css\grasp_mobile_progress_circle-1.0.0.min.css" />
     <Content Include="css\login2.css" />
     <Content Include="css\reset.css" />
+    <Content Include="css\Select_option.css" />
     <Content Include="css\style.blue.css" />
     <Content Include="css\style.css" />
     <Content Include="css\style.default.css" />

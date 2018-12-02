@@ -15,22 +15,12 @@ var Boxlinhas;
 
 $(document).ready(function() {
 
-    
-    
+   
     $(".dropdown-item").click(function(){
         //var value= $('#dropselect-demo1').dropselect();
         var a = $(this).val();
         console.log(a);
-    
-        $.ajax({
-          type:"GET",
-          data: {id:a},
-          url: "Projeto_Main/mainline/teste.php?id="+a,
-          success: function(dados){
-              console.log(dados);
-              $('.alinha_meio').html(dados);
-          }
-        });
+   
     
     });
 

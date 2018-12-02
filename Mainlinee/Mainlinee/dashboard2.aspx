@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
-
+    <link rel="stylesheet" href="css/Select_option.css">
 
       <!-- <link rel="stylesheet" href="css/style.red.css"> -->
     <!-- Bootstrap CSS-->
@@ -44,6 +44,8 @@
 <body>
     
         <!-- Side Navbar -->
+
+    <form id="form1" runat="server">
         <nav class="side-navbar">
           <div class="side-navbar-wrapper">
             <!-- Sidebar Header    -->
@@ -95,14 +97,47 @@
                 </div>
 
                 <div id="Linhas">
+                    <!--Modal-->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom:10px;">Cadastrar Máquina</button>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Cadastro Máquina</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Maquina:</label>
+                              </div>
+                              <div class="form-group">
+                                <asp:DropDownList id="DropList" Runat="Server">
+                                  
+                                </asp:DropDownList>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Cadastrar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
                     <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Dropdown button
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <input class="dropdown-item" href="#" value="vai se fuder namoral" data-id="1">
-                        <input class="dropdown-item" href="#" value="Esmeralda" data-id="2">
-                        <input class="dropdown-item" href="#" value="Diamante" data-id="3">
+                        <input class="dropdown-item" value="vai se fuder namoral" data-id="1"/>
+                        <input class="dropdown-item" value="Esmeralda" data-id="2"/>
+                        <input class="dropdown-item" value="Diamante" data-id="3"/>
                       </div>
                     </div>
                             <% 
@@ -113,7 +148,7 @@
 
                                     String id = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()))[cont].id;
                                     Session["idAtivo"] = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()))[cont].id;
-                            %>
+                                %>
                     <figure class="figure">
                         <a href="charts.aspx?id=<%=id %>">
                         <img src="img/computador.jpg"   class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
@@ -151,7 +186,7 @@
             </div>
           </footer>
         </div>
-    
+    </form>
 
     <!-- JavaScript files-->
     <script src="js/bootstrap-dropselect.min.js"></script>

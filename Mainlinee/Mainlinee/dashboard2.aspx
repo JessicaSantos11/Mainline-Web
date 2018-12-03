@@ -62,7 +62,6 @@
             <div class="main-menu">
               <h5 class="sidenav-heading">Menu</h5>
               <ul id="side-main-menu" class="side-menu list-unstyled">
-                <li id="home"><a > <i class="icon-home"></i>Home</a></li>
                 <li id="linhas"><a > <i class="fas fa-subway"></i>Linhas</a></li>
                 <li id="graficos"><a > <i class="fas fa-chart-pie"></i>Analytcs</a></li>
                 <li id="suporte"><a > <i class="fas fa-headset"></i>Suporte</a></li>
@@ -115,7 +114,16 @@
                                 <label for="recipient-name" class="col-form-label">Maquina:</label>
                               </div>
                               <div class="form-group">
-                                <asp:DropDownList id="DropList" Runat="Server">
+                                <asp:DropDownList id="DropDownListAtivo" Runat="Server">
+                                  
+                                </asp:DropDownList>
+                              </div>
+
+                                <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Usuário:</label>
+                              </div>
+                              <div class="form-group">
+                                <asp:DropDownList id="DropDownListUsuario" Runat="Server">
                                   
                                 </asp:DropDownList>
                               </div>
@@ -123,7 +131,7 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Cadastrar</button>
+                            <asp:Button type="button" OnClick="btn_cadastrar" class="btn btn-primary" runat="server" text="Cadastrar"/>
                           </div>
                         </div>
                       </div>

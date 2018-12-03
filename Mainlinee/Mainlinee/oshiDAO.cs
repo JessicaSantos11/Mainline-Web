@@ -9,6 +9,42 @@ namespace Mainlinee
 {
     public class oshiDAO
     {
+        public List<Ativo> selectAtivo2()
+        {
+            List<Ativo> lista = new List<Ativo>();
+            Ativo ativo = new Ativo();
+            //String connection = "Server=tcp:lol-2018.database.windows.net,1433;Initial Catalog=ADS 2018;Persist Security Info=False;User ID=jessicasantos;Password=Corinthians11;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            CnxSql cnxSql = new CnxSql();
+            using (cnxSql.cnx)
+            {
+                cnxSql.cnx.Open();
+                String select = "select IDATIVO from ativo;";
+                using (SqlCommand cmd = new SqlCommand(select, cnxSql.cnx))
+                {
+                    
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new Ativo()
+                            {
+                                id = reader.GetString(0)
+                            });
+
+                            //ativo.nome = reader.GetString(1);
+
+                            //lista.Add(ativo);  
+                        }
+
+                    }
+                }
+                return lista;
+            }
+
+
+        }
+
+
         public List<Ativo> selectAtivo(int idAtivo)
         {
             List<Ativo> lista = new List<Ativo>();

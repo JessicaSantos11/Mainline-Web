@@ -73,7 +73,7 @@
                         }
                     },
                     data: {
-                        labels: ["January", "February", "March", "April", "May", "June", "July"],
+                        labels: [" ", " ", " ", " ", " ", " ", " "],
                         
                         datasets: [
                             {
@@ -118,8 +118,8 @@
                   
 
 
-
-                var xhttp = new XMLHttpRequest();
+        function att() {
+            var xhttp = new XMLHttpRequest();
                 //abre a página getOshi.aspx
                 xhttp.open("GET", "getOshi.aspx", true);
                 xhttp.onreadystatechange = function () {
@@ -137,6 +137,8 @@
                     }
                 }
                 xhttp.send();
+        }
+                
 
 
                 
@@ -168,31 +170,46 @@
                 dataset.data.push(dados[2]);
                 console.log("teste se ta indo" + dados[2]);
             });
-                        
-                    
+            window.myLine.update();
+        }
 
+
+        function removeData() {
+            config.data.labels.push(' ');
+            
+            config.dataset.data.labels.pop();
+
+            
+            //config.data[0].datasets.pop();
+            
+           
             window.myLine.update();
         }
 
    
 
         
-        //essa parte executa a função a cada 10 segundos
-        
+        //essa parte executa a função a cada 5 segundos
+        var i = 0;
         setInterval(() => {
             try {
-  
-               PegarDados(numeros);
+               att();
+                PegarDados(numeros);
+
+                if (i > 4) {
+                    removeData();
+                    console.log("aki"+i);
+                }
+                i++;
               
             } catch (err) { console.log(err); }
-        }, 2000);
+        }, 1000);
         
     </script>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            testeeeee
             <% String teste =  Request.Params["id"]; %>
 
             <%=teste %>

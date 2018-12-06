@@ -53,7 +53,7 @@
               <!-- User Info-->
               <div class="sidenav-header-inner text-center">
                   <% String nome = Session["nomeUser"].ToString(); %>
-                  <h2 id="nomeUser" class="h5"><%=nome %></h2><span>Web Developer</span>
+                  <h2 id="nomeUser" class="h5"><%=nome %></h2>
               </div>
               <!-- Small Brand information, appears on minimized sidebar-->
               <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
@@ -80,7 +80,7 @@
                   <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
 
                     <!-- Log out-->
-                    <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
+                    <li class="nav-item"><a  class="nav-link logout"> <span class="d-none d-sm-inline-block" ><asp:Button class="d-none d-sm-inline-block" runat="server" onclick="logout" Text="Logout" /></span><i class="fa fa-sign-out"></i></a></li>
                   </ul>
                 </div>
               </div>
@@ -89,15 +89,14 @@
           <!-- Header Section-->
           <section class="dashboard-header section-padding">
             <div class="container">
-                <div id="Home">
-                  <div class="jumbotron">
-                    <h1>Home</h1>
-                  </div>
-                </div>
-
+                
                 <div id="Linhas">
                     <!--Modal-->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom:10px;">Cadastrar Máquina</button>
+                    
+
+
+                    <div class="dropdown" style="display:block;">
+                      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom:10px;" aria-haspopup="true" aria-expanded="false">Cadastrar Máquina</button>
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
@@ -136,17 +135,6 @@
                         </div>
                       </div>
                     </div>
-
-
-                    <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown button
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <input class="dropdown-item" value="vai se fuder namoral" data-id="1"/>
-                        <input class="dropdown-item" value="Esmeralda" data-id="2"/>
-                        <input class="dropdown-item" value="Diamante" data-id="3"/>
-                      </div>
                     </div>
                             <% 
                                 Mainlinee.oshiDAO oshi = new Mainlinee.oshiDAO();

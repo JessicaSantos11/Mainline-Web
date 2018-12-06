@@ -77,7 +77,7 @@
                         
                         datasets: [
                             {
-                                label: "<%=ativo%>",
+                                label: "Mémoria RAM",
                                 fill: true,
                                 lineTension: 0.3,
                                 backgroundColor: "rgba(51, 179, 90, 0.38)",
@@ -92,6 +92,52 @@
                                 pointBorderWidth: 1,
                                 pointHoverRadius: 5,
                                 pointHoverBackgroundColor: brandPrimary,
+                                pointHoverBorderColor: "rgba(220,220,220,1)",
+                                pointHoverBorderWidth: 2,
+                                pointRadius: 1,
+                                pointHitRadius: 10,
+                                data: [],
+                                spanGaps: false
+                            },
+                            {
+                                label: "CPU",
+                                fill: true,
+                                lineTension: 0.3,
+                                backgroundColor: "rgba(81, 104, 204,0.4)",
+                                borderColor: "rgba(81, 104, 204,1)",
+                                borderCapStyle: 'butt',
+                                borderDash: [],
+                                borderDashOffset: 0.0,
+                                borderJoinStyle: 'miter',
+                                borderWidth: 1,
+                                pointBorderColor: "rgba(75,192,192,1)",
+                                pointBackgroundColor: "#fff",
+                                pointBorderWidth: 1,
+                                pointHoverRadius: 5,
+                                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                                pointHoverBorderColor: "rgba(220,220,220,1)",
+                                pointHoverBorderWidth: 2,
+                                pointRadius: 1,
+                                pointHitRadius: 10,
+                                data: [],
+                                spanGaps: false
+                            },
+                            {
+                                label: "HD",
+                                fill: true,
+                                lineTension: 0.3,
+                                backgroundColor: "rgba(244, 78, 66,0.4)",
+                                borderColor: "rgba(244, 78, 66,1)",
+                                borderCapStyle: 'butt',
+                                borderDash: [],
+                                borderDashOffset: 0.0,
+                                borderJoinStyle: 'miter',
+                                borderWidth: 1,
+                                pointBorderColor: "rgba(75,192,192,1)",
+                                pointBackgroundColor: "#fff",
+                                pointBorderWidth: 1,
+                                pointHoverRadius: 5,
+                                pointHoverBackgroundColor: "rgba(75,192,192,1)",
                                 pointHoverBorderColor: "rgba(220,220,220,1)",
                                 pointHoverBorderWidth: 2,
                                 pointRadius: 1,
@@ -139,71 +185,43 @@
                 xhttp.send();
         }
                 
-
-
-                
-
-
-
-          //  });
-
-            /*
-                function addData(chart, label, data) {
-                    chart.data.labels.push(label);
-                    chart.data.datasets.forEach((dataset) => {
-                        dataset.data.push(data);
-                    });
-                    chart.update();
-                }
-              */
-
-            
-
-
-        
-        function PegarDados(dados) {
-            
+        var a = 0;
+        function PegarDados(dados,a) {           
             //config.data.datasets.data.push(dados[0]);
             //console.log("teste se ta indo" + dados[0]);
-
-            config.data.datasets.forEach(function (dataset) {
-                dataset.data.push(dados[2]);
-                console.log("teste se ta indo" + dados[2]);
+            
+            config.data.datasets.forEach(function (dataset,index) {
+                
+                dataset.data.push(dados[index]);
+              
+                if (a > 6) {
+                    dataset.data.shift();
+                }
             });
+
+
+            //config.data.push(' ');    // add the new value to the right
+            //config.data.shift(); 
+
             window.myLine.update();
         }
-
-
-        function removeData() {
-            config.data.labels.push(' ');
-            
-            config.dataset.data.labels.pop();
-
-            
-            //config.data[0].datasets.pop();
-            
-           
-            window.myLine.update();
-        }
-
-   
-
-        
+      
         //essa parte executa a função a cada 5 segundos
         var i = 0;
         setInterval(() => {
             try {
-               att();
-                PegarDados(numeros);
-
+                att();
+                PegarDados(numeros,i);
+                /*
                 if (i > 4) {
-                    removeData();
+                    removeData2();
                     console.log("aki"+i);
-                }
+                }*/
                 i++;
+                
               
             } catch (err) { console.log(err); }
-        }, 1000);
+        }, 2000);
         
     </script>
 </head>
@@ -222,7 +240,7 @@
               <!-- User Info-->
               <div class="sidenav-header-inner text-center">
                   <% String nome = Session["nomeUser"].ToString(); %>
-                  <h2 id="nomeUser" class="h5"><%=nome %></h2><span>Web Developer</span>
+                  <h2 id="nomeUser" class="h5"><%=nome %></h2>
               </div>
               <!-- Small Brand information, appears on minimized sidebar-->
               <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
@@ -231,7 +249,7 @@
             <div class="main-menu">
               <h5 class="sidenav-heading">Menu</h5>
               <ul id="side-main-menu" class="side-menu list-unstyled">
-                <li id="home"><a> <i class="icon-home"></i>Voltar</a></li>
+                <li id="home"><a href="dashboard2.aspx"> <img src="img/voltar.png"/>Voltar</a></li>
               </ul>
             </div>
           </div>
@@ -247,7 +265,7 @@
                   <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
 
                     <!-- Log out-->
-                    <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
+                    <li class="nav-item"><a class="nav-link logout"> <span class="d-none d-sm-inline-block"><asp:Button class="d-none d-sm-inline-block" runat="server" onclick="logout" Text="Logout" /></span><i class="fa fa-sign-out"></i></a></li>
                   </ul>
                 </div>
               </div>

@@ -11,7 +11,16 @@ namespace Mainlinee
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("Login2.aspx");
+            }
+        }
 
+        protected void logout(object sender, EventArgs e)
+        {
+            Session["Usuario"] = null;
+            Response.Redirect("Login2.aspx");
         }
     }
 }

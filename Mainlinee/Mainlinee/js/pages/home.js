@@ -15,21 +15,11 @@ var Boxlinhas;
 
 $(document).ready(function() {
 
-   
-    $(".dropdown-item").click(function(){
-        //var value= $('#dropselect-demo1').dropselect();
-        var a = $(this).val();
-        console.log(a);
-   
-    
-    });
 
-    Boxhome=$("#Home");
     Boxgraficos=$("#Analytcs");
     Boxsuporte=$("#Suporte");
     Boxlinhas=$("#Linhas");
 
-    home=$("#home");
     graficos=$("#graficos");
     suporte = $("#suporte");
     linhas = $("#linhas");
@@ -38,19 +28,10 @@ $(document).ready(function() {
     computador = $('.figure');
     graficoHd = $('#lineChartExample');
 
-    Boxhome.show();
+    
     Boxgraficos.hide();
     Boxsuporte.hide();
-    Boxlinhas.hide();    
-
-    
-    // HOME
-    home.click(function() {
-      Boxhome.show();
-      Boxgraficos.hide();
-      Boxsuporte.hide();
-      Boxlinhas.hide();
-    });
+    Boxlinhas.show();    
 
     // LINHAS
     linhas.click(function() {
@@ -68,7 +49,6 @@ $(document).ready(function() {
 
     // GRAFICOS
     graficos.click(function() {
-      Boxhome.hide();
       Boxgraficos.show();
       Boxsuporte.hide();
       Boxlinhas.hide();
@@ -76,7 +56,6 @@ $(document).ready(function() {
 
     // SUPORTE
     suporte.click(function() {
-      Boxhome.hide();
       Boxgraficos.hide();
       Boxsuporte.show();
       Boxlinhas.hide();

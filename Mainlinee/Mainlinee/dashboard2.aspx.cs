@@ -23,10 +23,14 @@ namespace Mainlinee
             }
         }
 
+        protected void logout(object sender, EventArgs e)
+        {
+            Session["Usuario"] = null;
+            Response.Redirect("Login2.aspx");
+        }
 
 
-
-        private void ColocarDadosAtivo()
+            private void ColocarDadosAtivo()
         {
 
             oshiDAO oshi = new oshiDAO();

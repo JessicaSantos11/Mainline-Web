@@ -41,9 +41,13 @@
 
     <script>
         /*global $, document, LINECHARTEXMPLE*/
-        function pegarDados() {
+        
+           // $(document).ready(function () {
 
-            $(document).ready(function () {
+                
+                var idIten = "MB-1234567890";
+                
+
                 'use strict';
 
                 var brandPrimary = 'rgba(51, 179, 90, 1)';
@@ -54,36 +58,23 @@
                     String ativo = Request.Params["id"];
                         
                 %>
-                console.log("<%=ativo%>");
-                var lineChartExample = new Chart(LINECHARTEXMPLE, {
-                <%  Mainlinee.oshiDAO oshi = new Mainlinee.oshiDAO();
-        int a = 0;
-        int b = 0;
-        int c = 0;
-        int d = 0;
-        int e = 0;
-        int f = 0;
-        int g = 0;
-        int h = 0;
-        int i = 0;
+                
 
-        if(oshi.selectHD2(ativo)!=null) {
-            a = oshi.selectHD2(ativo)[0].hd;
-            b = oshi.selectHD2(ativo)[1].hd;
-            c = oshi.selectHD2(ativo)[2].hd;
-            d = oshi.selectHD2(ativo)[3].hd;
-            e = oshi.selectHD2(ativo)[4].hd;
-            f = oshi.selectHD2(ativo)[5].hd;
-        }
-        else
-        {
-
-        }
-
-                    %>
+                var config = {
                     type: 'line',
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    max: 100,
+                                    min: 0
+                                }
+                            }]
+                        }
+                    },
                     data: {
                         labels: ["January", "February", "March", "April", "May", "June", "July"],
+                        
                         datasets: [
                             {
                                 label: "<%=ativo%>",
@@ -93,7 +84,7 @@
                                 borderColor: brandPrimary,
                                 borderCapStyle: 'butt',
                                 borderDash: [],
-                                borderDashOffset: 0.0,
+                                borderDashOffset: 0.0,  
                                 borderJoinStyle: 'miter',
                                 borderWidth: 1,
                                 pointBorderColor: brandPrimary,
@@ -105,33 +96,97 @@
                                 pointHoverBorderWidth: 2,
                                 pointRadius: 1,
                                 pointHitRadius: 10,
-                                data: [<%=a%>,<%=b%>,<%=c%>,<%=d%>,<%=e%>,<%=f%>],
+                                data: [],
                                 spanGaps: false
                             }
                         ]
                     }
 
-                    
-                });
+                }
+                    window.onload = function () {
+                        var ctx = document.getElementById('lineChartExample').getContext('2d');
+                        window.myLine = new Chart(ctx, config);
+                        /*
+                        config.data.datasets.forEach(function (dataset) {
+                            dataset.data.push(30);
+                        });
+                        
+                        window.myLine.update();
+                        */
+                    };
 
-                chart.data.labels.push(label);
-                lineChartExample.<%=a%>.datasets.forEach((dataset) => {
-                    dataset.data.push(<%=a%>);
-                });
-                chart.update();
+                  
 
+
+
+                var xhttp = new XMLHttpRequest();
+                //abre a página getOshi.aspx
+                xhttp.open("GET", "getOshi.aspx", true);
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
+                        //pega os dados da página getOshi.aspx e coloca eles no array numeros
+                        numeros = xhttp.responseText.split("+");
+
+                        //verifica se o array está vazio
+                        if (numeros[0] != "") {
+                            //seleciona as divs aonde os dados vão aparecer
+                            console.log(numeros[0]+"a,khhhhhhhh");
+                            
+                        }
+
+                    }
+                }
+                xhttp.send();
+
+
+                
+
+
+
+          //  });
+
+            /*
+                function addData(chart, label, data) {
+                    chart.data.labels.push(label);
+                    chart.data.datasets.forEach((dataset) => {
+                        dataset.data.push(data);
+                    });
+                    chart.update();
+                }
+              */
+
+            
+
+
+        
+        function PegarDados(dados) {
+            
+            //config.data.datasets.data.push(dados[0]);
+            //console.log("teste se ta indo" + dados[0]);
+
+            config.data.datasets.forEach(function (dataset) {
+                dataset.data.push(dados[2]);
+                console.log("teste se ta indo" + dados[2]);
             });
+                        
+                    
+
+            window.myLine.update();
         }
+
+   
+
+        
         //essa parte executa a função a cada 10 segundos
         
         setInterval(() => {
             try {
   
-               pegarDados();
+               PegarDados(numeros);
               
             } catch (err) { console.log(err); }
-        }, 5000);
-
+        }, 2000);
+        
     </script>
 </head>
 <body>
@@ -142,9 +197,68 @@
 
             <%=teste %>
 
-            <div class="card-body">
-                <canvas id="lineChartExample"></canvas>
+            <!-- Side Navbar -->
+        <nav class="side-navbar">
+          <div class="side-navbar-wrapper">
+            <!-- Sidebar Header    -->
+            <div class="sidenav-header d-flex align-items-center justify-content-center">
+              <!-- User Info-->
+              <div class="sidenav-header-inner text-center">
+                  <% String nome = Session["nomeUser"].ToString(); %>
+                  <h2 id="nomeUser" class="h5"><%=nome %></h2><span>Web Developer</span>
+              </div>
+              <!-- Small Brand information, appears on minimized sidebar-->
+              <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
             </div>
+            <!-- Sidebar Navigation Menus-->
+            <div class="main-menu">
+              <h5 class="sidenav-heading">Menu</h5>
+              <ul id="side-main-menu" class="side-menu list-unstyled">
+                <li id="home"><a> <i class="icon-home"></i>Voltar</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="page">
+          <!-- navbar-->
+          <header class="header">
+            <nav class="navbar">
+              <div class="container-fluid">
+                <div class="navbar-holder d-flex align-items-center justify-content-between">
+                  <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="index.html" class="navbar-brand">
+                      <div class="brand-text d-none d-md-inline-block"><span>MainLine </span><strong class="text-primary">Dashboard</strong></div></a></div>
+                  <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+
+                    <!-- Log out-->
+                    <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </header>
+          <!-- Header Section-->
+          <section class="dashboard-header section-padding">
+            <div class="container">
+                <div id="Home">
+                    <div class="card-body">
+                        <canvas id="lineChartExample"></canvas>
+                    </div>
+                </div>
+            </div>
+          </section>
+
+          <footer class="main-footer">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-6">
+                  <p>MAINLINE &copy;</p>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+
+            
         </div>
     </form>
 

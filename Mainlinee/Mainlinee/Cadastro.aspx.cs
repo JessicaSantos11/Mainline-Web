@@ -23,22 +23,29 @@ namespace Mainlinee
         {
             CnxSql cnxSql = new CnxSql();
             string sqlCommand = "INSERT INTO Usuario (nome, telefone, email, senha, isADM) VALUES (@nome, @telefone, @email, @senha, @isADM)";
-            if (txtsenha.Text == txtconfSenha.Text)
+            if (txtSenha.Text == txtconfSenha.Text)
             {
-                using (cnxSql.cnx)
+                if (isADM.Text != "null")
                 {
-                    cnxSql.cnx.Open();
+                    using (cnxSql.cnx)
+                    {
+                        cnxSql.cnx.Open();
 
-                    SqlCommand cmd = new SqlCommand(sqlCommand, cnxSql.cnx);
-                    cmd.Parameters.AddWithValue("@nome", txtnome.Text);
-                    cmd.Parameters.AddWithValue("@telefone", txttelefone.Text);
-                    cmd.Parameters.AddWithValue("@email", txtemail.Text);
-                    cmd.Parameters.AddWithValue("@senha", txtsenha.Text);
-                    cmd.Parameters.AddWithValue("@isADM", isADM.Text);
+                        SqlCommand cmd = new SqlCommand(sqlCommand, cnxSql.cnx);
+                        cmd.Parameters.AddWithValue("@nome", txtnome.Text);
+                        cmd.Parameters.AddWithValue("@telefone", txttelefone.Text);
+                        cmd.Parameters.AddWithValue("@email", txtemail.Text);
+                        cmd.Parameters.AddWithValue("@senha", txtSenha.Text);
+                        cmd.Parameters.AddWithValue("@isADM", isADM.Text);
 
-                    cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
 
-                    Response.Redirect("Login2.aspx");
+                        Response.Redirect("Login2.aspx");
+                    }
+                }
+                else
+                {
+                    Response.Write("<script>alert('Por favor selecione seu nível de usuário');</script>");
                 }
             }
             else

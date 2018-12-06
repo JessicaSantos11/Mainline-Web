@@ -15,6 +15,39 @@ namespace Mainlinee
             {
                 Response.Redirect("Login2.aspx");
             }
+
+            if (!IsPostBack)
+            {
+                ColocarDados();
+            }
+        }
+
+
+
+
+        private void ColocarDados()
+        {
+
+            oshiDAO oshi = new oshiDAO();
+            List<Ativo> items = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()));
+
+            
+
+            int cont = 0;
+            
+            while (items.Count > cont)
+            {
+                DropList.Items.Insert(cont, new ListItem(items[cont].nome, items[cont].id));
+                cont++;
+            }
+
+            
+            DropList.DataBind();
+        
         }
     }
+
+
+    
+
 }

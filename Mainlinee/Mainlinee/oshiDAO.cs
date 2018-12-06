@@ -9,6 +9,7 @@ namespace Mainlinee
 {
     public class oshiDAO
     {
+
         public List<Ativo> selectAtivo2()
         {
             List<Ativo> lista = new List<Ativo>();
@@ -18,7 +19,7 @@ namespace Mainlinee
             using (cnxSql.cnx)
             {
                 cnxSql.cnx.Open();
-                String select = "select IDATIVO from ativo;";
+                String select = "select IDATIVO,NOMEATIVO from ativo;";
                 using (SqlCommand cmd = new SqlCommand(select, cnxSql.cnx))
                 {
                     
@@ -28,7 +29,8 @@ namespace Mainlinee
                         {
                             lista.Add(new Ativo()
                             {
-                                id = reader.GetString(0)
+                                id = reader.GetString(0),
+                                nome = reader.GetString(1)
                             });
 
                             //ativo.nome = reader.GetString(1);
@@ -54,7 +56,7 @@ namespace Mainlinee
             using (cnxSql.cnx)
             {
                 cnxSql.cnx.Open();
-                String select = "select p.IDATIVO from  possui as p  Where p.IDUSER = @id order by p.IDATIVO desc";
+                String select = "select p.IDATIVO,a.NOMEATIVO from possui as p , ativo as a Where p.IDUSER = @id and a.idAtivo = p.idAtivo order by p.IDATIVO desc";
                 using (SqlCommand cmd = new SqlCommand(select, cnxSql.cnx))
                 {
                     cmd.Parameters.AddWithValue("@id", idAtivo);
@@ -64,7 +66,8 @@ namespace Mainlinee
                         {
                             lista.Add(new Ativo()
                             {
-                                id = reader.GetString(0)
+                                id = reader.GetString(0),
+                                nome = reader.GetString(1)
                             });
 
                             //ativo.nome = reader.GetString(1);

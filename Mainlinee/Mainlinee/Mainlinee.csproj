@@ -119,10 +119,12 @@
     <Content Include="img\bg4.jpg" />
     <Content Include="img\bg5.jpg" />
     <Content Include="img\computador.jpg" />
+    <Content Include="img\edit.png" />
     <Content Include="img\eu.jpg" />
     <Content Include="img\github.png" />
     <Content Include="img\icon.png" />
     <Content Include="img\linkedin.png" />
+    <Content Include="img\lixeira.png" />
     <Content Include="img\logo-mobile.png" />
     <Content Include="img\M.png" />
     <Content Include="img\mainline.png" />

@@ -78,13 +78,13 @@
                         datasets: [
                             {
                                 label: "Mémoria RAM",
-                                fill: true,
-                                lineTension: 0.3,
+                                fill: false,
+                                lineTension: 0.8,
                                 backgroundColor: "rgba(51, 179, 90, 0.38)",
                                 borderColor: brandPrimary,
                                 borderCapStyle: 'butt',
                                 borderDash: [],
-                                borderDashOffset: 0.0,  
+                                borderDashOffset: 5.0,  
                                 borderJoinStyle: 'miter',
                                 borderWidth: 1,
                                 pointBorderColor: brandPrimary,
@@ -101,8 +101,8 @@
                             },
                             {
                                 label: "CPU",
-                                fill: true,
-                                lineTension: 0.3,
+                                fill: false,
+                                lineTension: 0.8,
                                 backgroundColor: "rgba(81, 104, 204,0.4)",
                                 borderColor: "rgba(81, 104, 204,1)",
                                 borderCapStyle: 'butt',
@@ -124,8 +124,8 @@
                             },
                             {
                                 label: "HD",
-                                fill: true,
-                                lineTension: 0.3,
+                                fill: false,
+                                lineTension: 0.8,
                                 backgroundColor: "rgba(244, 78, 66,0.4)",
                                 borderColor: "rgba(244, 78, 66,1)",
                                 borderCapStyle: 'butt',

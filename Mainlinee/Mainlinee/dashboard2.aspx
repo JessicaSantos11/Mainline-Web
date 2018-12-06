@@ -117,7 +117,11 @@
                                 </asp:DropDownList>
                               </div>
 
-                                <div class="form-group">
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Nome da Máquina:</label>
+                                <asp:TextBox runat="server" ID="txt_nome_maquina" class="form-control" />
+                              </div>
+                              <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Usuário:</label>
                               </div>
                               <div class="form-group">
@@ -141,13 +145,22 @@
                                 {
 
                                     String id = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()))[cont].id;
+                                    String nomeMaquina = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()))[cont].nome;
                                     Session["idAtivo"] = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()))[cont].id;
                                 %>
-                    <figure class="figure">
+                    <figure class="figure" style="margin-top:20px;">
+                        <figcaption class="figure-caption" style="text-align:center;"><%=nomeMaquina%></figcaption>
+
                         <a href="charts.aspx?id=<%=id %>">
                         <img src="img/computador.jpg"   class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
                         </a> 
-                        <figcaption class="figure-caption"><%=id%></figcaption>
+
+                        <div style="margin-left:45px;">
+                            <asp:Button runat="server" class="btn btn-primary" ID="Button1" Text="Editar"/>
+                            <asp:LinkButton runat="server" class="btn btn-primary" CustomParameter='<%=id %>' onclick="Excluir" Text="Excluir"/>
+                        </div>
+                       
+
                     </figure>
 
                             <%

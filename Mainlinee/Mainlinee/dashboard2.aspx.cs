@@ -55,9 +55,6 @@ namespace Mainlinee
             usuarioDAO usuario = new usuarioDAO();
             List<Usuario> items = usuario.selectUsuario();
             
-
-
-
             int cont = 0;
 
             while (items.Count > cont)
@@ -77,6 +74,7 @@ namespace Mainlinee
             usuarioDAO usuario = new usuarioDAO();
             oshiDAO oshi = new oshiDAO();
             int cadastro = 0;
+            int cadastro2 = 0;
             bool tem_cadastro = false;
             int cont = 0;
 
@@ -94,7 +92,8 @@ namespace Mainlinee
             if(tem_cadastro == false)
             {
                 cadastro = usuario.cadastroAtivo(DropDownListAtivo.SelectedItem.Value, DropDownListUsuario.SelectedItem.Value);
-                if (cadastro>0)
+                cadastro2 = usuario.cadastroNome(DropDownListAtivo.SelectedItem.Value, txt_nome_maquina.Text);
+                if (cadastro>0 && cadastro2>0)
                 {
                     Response.Write("<script>alert('Cadastrado com sucesso')</script>");
                     //Response.Redirect("dashboard2.aspx");
@@ -110,6 +109,21 @@ namespace Mainlinee
             }
 
 
+        }
+
+        protected void Excluir(Object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            String id = lnk.Attributes["CustomParameter"].ToString();
+            usuarioDAO usuario = new usuarioDAO();
+            if (usuario.excluirAtivo(id)>0)
+            {
+                Response.Write("<script>alert('Ativo excluido com sucesso')</script>");
+            }
+            else
+            {
+                Response.Write("<script>alert('Erro ao excluir')</script>");
+            }
         }
     }
 }

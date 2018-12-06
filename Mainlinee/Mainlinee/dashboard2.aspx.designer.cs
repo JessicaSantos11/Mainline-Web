@@ -31,6 +31,15 @@ namespace Mainlinee {
         protected global::System.Web.UI.WebControls.DropDownList DropDownListAtivo;
         
         /// <summary>
+        /// Controle txt_nome_maquina.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_nome_maquina;
+        
+        /// <summary>
         /// Controle DropDownListUsuario.
         /// </summary>
         /// <remarks>
@@ -38,5 +47,14 @@ namespace Mainlinee {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownListUsuario;
+        
+        /// <summary>
+        /// Controle Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

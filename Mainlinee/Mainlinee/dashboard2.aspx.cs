@@ -30,7 +30,7 @@ namespace Mainlinee
         }
 
 
-            private void ColocarDadosAtivo()
+        private void ColocarDadosAtivo()
         {
 
             oshiDAO oshi = new oshiDAO();
@@ -112,8 +112,4 @@ namespace Mainlinee
 
         }
     }
-
-
-    
-
 }

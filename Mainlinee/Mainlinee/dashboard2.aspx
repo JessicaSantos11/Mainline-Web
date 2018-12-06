@@ -80,7 +80,7 @@
                   <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
 
                     <!-- Log out-->
-                    <li class="nav-item"><a  class="nav-link logout"> <span class="d-none d-sm-inline-block" ><asp:Button class="d-none d-sm-inline-block" runat="server" onclick="logout" Text="Logout" /></span><i class="fa fa-sign-out"></i></a></li>
+                    <li class="nav-item"><a  class="nav-link logout"> <span class="d-none d-sm-inline-block" ><asp:Button class="btn btn-secondary" runat="server" onclick="logout" Text="Logout" /></span><i class="fa fa-sign-out"></i></a></li>
                   </ul>
                 </div>
               </div>
@@ -108,7 +108,6 @@
                             </button>
                           </div>
                           <div class="modal-body">
-                            <form>
                               <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Maquina:</label>
                               </div>
@@ -126,7 +125,6 @@
                                   
                                 </asp:DropDownList>
                               </div>
-                            </form>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

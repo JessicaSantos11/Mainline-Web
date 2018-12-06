@@ -13,7 +13,7 @@ namespace Mainlinee
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["Usuario"] = null;
+            
             /*
             if (Session["Usuario"] != null)
             {

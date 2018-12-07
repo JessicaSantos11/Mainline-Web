@@ -7,6 +7,8 @@ namespace Mainlinee
 {
     public class Ativo
     {
+
+        public int idPossui{ get; set; }
         public String id { get; set; }
         public String nome { get; set; }
 

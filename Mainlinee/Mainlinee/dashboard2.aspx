@@ -145,6 +145,7 @@
                                 {
 
                                     String id = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()))[cont].id;
+                                    int idPossui = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()))[cont].idPossui;
                                     String nomeMaquina = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()))[cont].nome;
                                     Session["idAtivo"] = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()))[cont].id;
                                 %>
@@ -172,17 +173,8 @@
                           </div>
                           <div class="modal-body">
                               <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Maquina:</label>
-                              </div>
-                              <div class="form-group">
-                                <asp:DropDownList id="DropDownListAtivo2" Runat="Server">
-                                  
-                                </asp:DropDownList>
-                              </div>
-
-                              <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Nome da Máquina:</label>
-                                <asp:TextBox runat="server" ID="TextBox1" class="form-control" />
+                                <asp:TextBox ID="txt_nome_ativo2" class="form-control" runat="server"/>
                               </div>
                               <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Usuário:</label>
@@ -195,7 +187,7 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <a class="btn btn-primary" href="dashboard2.aspx?modo=Editar&idMaquina=<%=id %>&idUser=<%=Int32.Parse(Session["Usuario"].ToString()) %>" style="color:#fff;">Editar</a>
+                            <a class="btn btn-primary" href="dashboard2.aspx?modo=Editar&idMaquina=<%=id %>&idPossui=<%=idPossui %>&idUser=<%=Int32.Parse(Session["Usuario"].ToString()) %>" style="color:#fff;">Editar</a>
                           </div>
                         </div>
                       </div>

@@ -9,30 +9,31 @@ namespace Mainlinee
 {
     public class usuarioDAO
     {
-        public int editarAtivo(String idAtivo , String usuario)
+        public int editarAtivo(int idPossui , String idUser)
         {
-            int excluir = 0;
+            int editar = 0;
             //String connection = "Server=tcp:lol-2018.database.windows.net,1433;Initial Catalog=ADS 2018;Persist Security Info=False;User ID=jessicasantos;Password=Corinthians11;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             CnxSql cnxSql = new CnxSql();
             using (cnxSql.cnx)
             {
                 cnxSql.cnx.Open();
-                String select = "delete from possui where idAtivo = @idAtivo";
+                String select = "update possui set idUser=@idUser where idPossui = @idPossui";
                 using (SqlCommand cmd = new SqlCommand(select, cnxSql.cnx))
                 {
 
-                    cmd.Parameters.AddWithValue("@idAtivo", idAtivo);
+                    cmd.Parameters.AddWithValue("@idPossui", idPossui);
+                    cmd.Parameters.AddWithValue("@idUser", idUser);
                     if (cmd.ExecuteNonQuery() > 0)
                     {
-                        excluir = 1;
+                        editar = 1;
                     }
                     else
                     {
-                        excluir = 0;
+                        editar = 0;
                     }
 
                 }
-                return excluir;
+                return editar;
             }
         }
 

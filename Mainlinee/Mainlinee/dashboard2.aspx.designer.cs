@@ -49,22 +49,13 @@ namespace Mainlinee {
         protected global::System.Web.UI.WebControls.DropDownList DropDownListUsuario;
         
         /// <summary>
-        /// Controle DropDownListAtivo2.
+        /// Controle txt_nome_ativo2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListAtivo2;
-        
-        /// <summary>
-        /// Controle TextBox1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txt_nome_ativo2;
         
         /// <summary>
         /// Controle DropDownListUsuario2.

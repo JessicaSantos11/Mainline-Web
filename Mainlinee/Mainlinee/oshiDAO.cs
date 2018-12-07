@@ -47,7 +47,7 @@ namespace Mainlinee
         }
 
 
-        public List<Ativo> selectAtivo(int idAtivo)
+        public List<Ativo> selectAtivo(int idUser)
         {
             List<Ativo> lista = new List<Ativo>();
             Ativo ativo = new Ativo();
@@ -56,18 +56,19 @@ namespace Mainlinee
             using (cnxSql.cnx)
             {
                 cnxSql.cnx.Open();
-                String select = "select p.IDATIVO,a.NOMEATIVO from possui as p , ativo as a Where p.IDUSER = @id and a.idAtivo = p.idAtivo order by p.IDATIVO desc";
+                String select = "select p.IDPOSSUI,p.IDATIVO,a.NOMEATIVO from possui as p , ativo as a Where p.IDUSER = @id and a.idAtivo = p.idAtivo order by p.IDATIVO desc";
                 using (SqlCommand cmd = new SqlCommand(select, cnxSql.cnx))
                 {
-                    cmd.Parameters.AddWithValue("@id", idAtivo);
+                    cmd.Parameters.AddWithValue("@id", idUser);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
                             lista.Add(new Ativo()
                             {
-                                id = reader.GetString(0),
-                                nome = reader.GetString(1)
+                                idPossui = reader.GetInt32(0),
+                                id = reader.GetString(1),
+                                nome = reader.GetString(2)
                             });
 
                             //ativo.nome = reader.GetString(1);

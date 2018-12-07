@@ -20,10 +20,9 @@ namespace Mainlinee
             {
                 ColocarDadosAtivo();
                 ColocarDadosUsuario();
-                ColocarDadosAtivo2();
                 ColocarDadosUsuario2();
 
-                if (Request.QueryString["idMaquina"] != null && Request.QueryString["idMaquina"] != null)
+                if (Request.QueryString["idMaquina"] != null)
                 {
 
                     if (Request.Params["modo"]=="Excluir")
@@ -40,10 +39,21 @@ namespace Mainlinee
                         {
                             Response.Write("<script>alert('Erro ao excluir')</script>");
                         }
-                    }else if(Request.Params["modo"] == "Editar")
+                    }else
                     {
-                        String id = Request.Params["idMaquina"];
+                        String idPossui = Request.Params["idPossui"];
+                        String idAtivo = Request.Params["idMaquina"];
+
                         usuarioDAO usuario = new usuarioDAO();
+
+                        if (btn_editar(int.Parse(idPossui), idAtivo, txt_nome_ativo2.Text)>0)
+                        {
+                            Response.Redirect("Dashboard2.aspx");
+                        }
+                        else
+                        {
+                            Response.Write("<script>alert('Erro ao excluir')</script>");
+                        }
                     }
                     
                 }
@@ -94,25 +104,6 @@ namespace Mainlinee
 
 
             DropDownListUsuario.DataBind();
-
-        }
-
-        private void ColocarDadosAtivo2()
-        {
-
-            oshiDAO oshi = new oshiDAO();
-            List<Ativo> items = oshi.selectAtivo2();
-
-            int cont = 0;
-
-            while (items.Count > cont)
-            {
-                DropDownListAtivo2.Items.Insert(cont, new ListItem(items[cont].id, items[cont].id));
-                cont++;
-            }
-
-
-            DropDownListAtivo2.DataBind();
 
         }
 
@@ -176,6 +167,30 @@ namespace Mainlinee
             }
 
 
+        }
+
+        protected int btn_editar(int idPossui, String idAtivo, String nomeAtivo)
+        {
+
+            usuarioDAO usuario = new usuarioDAO();
+            oshiDAO oshi = new oshiDAO();
+            int editar = 0;
+            int editar2 = 0;
+
+            editar = usuario.editarAtivo(idPossui, DropDownListUsuario2.SelectedItem.Value);
+            editar2 = usuario.cadastroNome(idAtivo, txt_nome_ativo2.Text);
+
+            if (editar > 0 && editar2>0)
+            {
+                Response.Write("<script>alert('Editado com sucesso')</script>");
+                //Response.Redirect("dashboard2.aspx");
+                return editar;
+            }
+            else
+            {
+                Response.Write("<script>alert('Falha ao editar')</script>");
+                return editar;
+            }
         }
     }
 }

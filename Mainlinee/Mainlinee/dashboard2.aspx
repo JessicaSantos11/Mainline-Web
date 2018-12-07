@@ -96,7 +96,7 @@
 
 
                     <div class="dropdown" style="display:block;">
-                      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom:10px;" aria-haspopup="true" aria-expanded="false">Cadastrar Máquina</button>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom:10px;" aria-haspopup="true" aria-expanded="false">Cadastrar Máquina</button>
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
@@ -156,8 +156,84 @@
                         </a> 
 
                         <div style="margin-left:45px;">
-                            <asp:Button runat="server" class="btn btn-primary" ID="Button1" Text="Editar"/>
-                            <asp:LinkButton runat="server" class="btn btn-primary" CustomParameter='<%=id %>' onclick="Excluir" Text="Excluir"/>
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Editar">
+                          Editar
+                        </button>
+
+                        <div class="modal fade" id="Editar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="editarLabel">Editar Máquina</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Maquina:</label>
+                              </div>
+                              <div class="form-group">
+                                <asp:DropDownList id="DropDownListAtivo2" Runat="Server">
+                                  
+                                </asp:DropDownList>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Nome da Máquina:</label>
+                                <asp:TextBox runat="server" ID="TextBox1" class="form-control" />
+                              </div>
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Usuário:</label>
+                              </div>
+                              <div class="form-group">
+                                <asp:DropDownList id="DropDownListUsuario2" Runat="Server">
+                                  
+                                </asp:DropDownList>
+                              </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a class="btn btn-primary" href="dashboard2.aspx?modo=Editar&idMaquina=<%=id %>&idUser=<%=Int32.Parse(Session["Usuario"].ToString()) %>" style="color:#fff;">Editar</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Deletar">
+                          Deletar
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="Deletar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="deleteLabel">Deletar</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                Deseja realmente deletar este item?
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <a class="btn btn-primary" href="dashboard2.aspx?modo=Excluir&idMaquina=<%=id %>&idUser=<%=Int32.Parse(Session["Usuario"].ToString()) %>" style="color:#fff;">Deletar</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
                         </div>
                        
 

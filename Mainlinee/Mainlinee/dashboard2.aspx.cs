@@ -20,6 +20,35 @@ namespace Mainlinee
             {
                 ColocarDadosAtivo();
                 ColocarDadosUsuario();
+                ColocarDadosAtivo2();
+                ColocarDadosUsuario2();
+
+                if (Request.QueryString["idMaquina"] != null && Request.QueryString["idMaquina"] != null)
+                {
+
+                    if (Request.Params["modo"]=="Excluir")
+                    {
+                        String idMaquina = Request.Params["idMaquina"];
+                        String idUser = Request.Params["idUser"];
+                        usuarioDAO usuario = new usuarioDAO();
+                        if (usuario.excluirAtivo(idMaquina.ToString(), idUser.ToString()) > 0)
+                        {
+                            Response.Write("<script>alert('Ativo excluido com sucesso')</script>");
+                            Response.Redirect("Dashboard2.aspx");
+                        }
+                        else
+                        {
+                            Response.Write("<script>alert('Erro ao excluir')</script>");
+                        }
+                    }else if(Request.Params["modo"] == "Editar")
+                    {
+                        String id = Request.Params["idMaquina"];
+                        usuarioDAO usuario = new usuarioDAO();
+                    }
+                    
+                }
+
+                
             }
         }
 
@@ -68,6 +97,44 @@ namespace Mainlinee
 
         }
 
+        private void ColocarDadosAtivo2()
+        {
+
+            oshiDAO oshi = new oshiDAO();
+            List<Ativo> items = oshi.selectAtivo2();
+
+            int cont = 0;
+
+            while (items.Count > cont)
+            {
+                DropDownListAtivo2.Items.Insert(cont, new ListItem(items[cont].id, items[cont].id));
+                cont++;
+            }
+
+
+            DropDownListAtivo2.DataBind();
+
+        }
+
+        private void ColocarDadosUsuario2()
+        {
+
+            usuarioDAO usuario = new usuarioDAO();
+            List<Usuario> items = usuario.selectUsuario();
+
+            int cont = 0;
+
+            while (items.Count > cont)
+            {
+                DropDownListUsuario2.Items.Insert(cont, new ListItem(items[cont].nome, items[cont].idUser.ToString()));
+                cont++;
+            }
+
+
+            DropDownListUsuario2.DataBind();
+
+        }
+
         protected void btn_cadastrar(object sender, EventArgs e)
         {
 
@@ -109,21 +176,6 @@ namespace Mainlinee
             }
 
 
-        }
-
-        protected void Excluir(Object sender, EventArgs e)
-        {
-            LinkButton lnk = sender as LinkButton;
-            String id = lnk.Attributes["CustomParameter"].ToString();
-            usuarioDAO usuario = new usuarioDAO();
-            if (usuario.excluirAtivo(id)>0)
-            {
-                Response.Write("<script>alert('Ativo excluido com sucesso')</script>");
-            }
-            else
-            {
-                Response.Write("<script>alert('Erro ao excluir')</script>");
-            }
         }
     }
 }

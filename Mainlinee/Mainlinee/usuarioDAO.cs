@@ -9,7 +9,7 @@ namespace Mainlinee
 {
     public class usuarioDAO
     {
-        public int excluirAtivo(String idAtivo)
+        public int editarAtivo(String idAtivo , String usuario)
         {
             int excluir = 0;
             //String connection = "Server=tcp:lol-2018.database.windows.net,1433;Initial Catalog=ADS 2018;Persist Security Info=False;User ID=jessicasantos;Password=Corinthians11;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
@@ -17,11 +17,39 @@ namespace Mainlinee
             using (cnxSql.cnx)
             {
                 cnxSql.cnx.Open();
-                String select = "delete from possui where idpossui = @idAtivo";
+                String select = "delete from possui where idAtivo = @idAtivo";
                 using (SqlCommand cmd = new SqlCommand(select, cnxSql.cnx))
                 {
 
                     cmd.Parameters.AddWithValue("@idAtivo", idAtivo);
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        excluir = 1;
+                    }
+                    else
+                    {
+                        excluir = 0;
+                    }
+
+                }
+                return excluir;
+            }
+        }
+
+        public int excluirAtivo(String idAtivo , String idUser)
+        {
+            int excluir = 0;
+            //String connection = "Server=tcp:lol-2018.database.windows.net,1433;Initial Catalog=ADS 2018;Persist Security Info=False;User ID=jessicasantos;Password=Corinthians11;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            CnxSql cnxSql = new CnxSql();
+            using (cnxSql.cnx)
+            {
+                cnxSql.cnx.Open();
+                String select = "delete from possui where idAtivo = @idAtivo AND idUser = @idUser";
+                using (SqlCommand cmd = new SqlCommand(select, cnxSql.cnx))
+                {
+
+                    cmd.Parameters.AddWithValue("@idAtivo", idAtivo);
+                    cmd.Parameters.AddWithValue("@idUser", idUser);
                     if (cmd.ExecuteNonQuery() > 0)
                     {
                         excluir = 1;

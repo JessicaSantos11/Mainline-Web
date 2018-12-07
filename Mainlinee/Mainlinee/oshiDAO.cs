@@ -19,7 +19,7 @@ namespace Mainlinee
             using (cnxSql.cnx)
             {
                 cnxSql.cnx.Open();
-                String select = "select IDATIVO,NOMEATIVO from ativo;";
+                String select = "select * from ativo;";
                 using (SqlCommand cmd = new SqlCommand(select, cnxSql.cnx))
                 {
                     
@@ -30,7 +30,7 @@ namespace Mainlinee
                             lista.Add(new Ativo()
                             {
                                 id = reader.GetString(0),
-                                nome = reader.GetString(1)
+                                //nome = reader.GetString(1)
                             });
 
                             //ativo.nome = reader.GetString(1);

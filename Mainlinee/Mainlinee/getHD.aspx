@@ -1,6 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="getOshi.aspx.cs" Inherits="Mainlinee.getOshi" %>
-
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="getHD.aspx.cs" Inherits="Mainlinee.getHD" %>
 
 <%if (Request.QueryString["id"] != null)
     { %>
@@ -9,7 +7,7 @@
         String idMaquina = Request.Params["id"];
         
         %>
-<%=Mainlinee.oshiDAO.getNumeros(idMaquina)%>
+<%=Mainlinee.oshiDAO.getHD(idMaquina)%>
 <% }
     catch (Exception ex) { Response.Write(ex); } %>
 <% } %>

@@ -106,7 +106,12 @@
     <Content Include="dashboard2.aspx" />
     <Content Include="FAQ.aspx" />
     <Content Include="fonts\dashboard.svg" />
+    <Content Include="getCPU.aspx" />
+    <Content Include="getHD.aspx" />
     <Content Include="getOshi.aspx" />
+    <Content Include="getRAM.aspx" />
+    <Content Include="getRede.aspx" />
+    <Content Include="getTime.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Default.aspx" />
     <Content Include="icons-reference\fonts\dashboard.svg" />
@@ -119,10 +124,12 @@
     <Content Include="img\bg4.jpg" />
     <Content Include="img\bg5.jpg" />
     <Content Include="img\computador.jpg" />
+    <Content Include="img\edit.png" />
     <Content Include="img\eu.jpg" />
     <Content Include="img\github.png" />
     <Content Include="img\icon.png" />
     <Content Include="img\linkedin.png" />
+    <Content Include="img\lixeira.png" />
     <Content Include="img\logo-mobile.png" />
     <Content Include="img\M.png" />
     <Content Include="img\mainline.png" />
@@ -141,9 +148,11 @@
     <Content Include="img\prince.JPG" />
     <Content Include="img\suporte.jpg" />
     <Content Include="img\voce-sabe-como-fazer-o-monitoramento-de-rede-da-sua-empresa.jpg" />
+    <Content Include="img\voltar.png" />
     <Content Include="img\wesley.jpg" />
     <Content Include="js\bootstrap-dropselect.min.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\pages\chart.js" />
     <Content Include="js\textBoxEbtn.js" />
     <Content Include="js\Chart.js" />
     <Content Include="js\chartjs-plugin-zoom.js" />
@@ -298,6 +307,7 @@
       <DependentUpon>charts.aspx</DependentUpon>
     </Compile>
     <Compile Include="CnxSql.cs" />
+    <Compile Include="CPU.cs" />
     <Compile Include="dashboard2.aspx.cs">
       <DependentUpon>dashboard2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -312,12 +322,47 @@
     <Compile Include="FAQ.aspx.designer.cs">
       <DependentUpon>FAQ.aspx</DependentUpon>
     </Compile>
+    <Compile Include="getCPU.aspx.cs">
+      <DependentUpon>getCPU.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="getCPU.aspx.designer.cs">
+      <DependentUpon>getCPU.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="getHD.aspx.cs">
+      <DependentUpon>getHD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="getHD.aspx.designer.cs">
+      <DependentUpon>getHD.aspx</DependentUpon>
+    </Compile>
     <Compile Include="getOshi.aspx.cs">
       <DependentUpon>getOshi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="getOshi.aspx.designer.cs">
       <DependentUpon>getOshi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="getRAM.aspx.cs">
+      <DependentUpon>getRAM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="getRAM.aspx.designer.cs">
+      <DependentUpon>getRAM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="getRede.aspx.cs">
+      <DependentUpon>getRede.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="getRede.aspx.designer.cs">
+      <DependentUpon>getRede.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="getTime.aspx.cs">
+      <DependentUpon>getTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="getTime.aspx.designer.cs">
+      <DependentUpon>getTime.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -339,6 +384,8 @@
     </Compile>
     <Compile Include="oshiDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RAM.cs" />
+    <Compile Include="Rede.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="usuarioDAO.cs" />
   </ItemGroup>

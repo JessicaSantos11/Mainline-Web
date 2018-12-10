@@ -53,7 +53,7 @@
               <!-- User Info-->
               <div class="sidenav-header-inner text-center">
                   <% String nome = Session["nomeUser"].ToString(); %>
-                  <h2 id="nomeUser" class="h5"><%=nome %></h2><span>Web Developer</span>
+                  <h2 id="nomeUser" class="h5"><%=nome %></h2>
               </div>
               <!-- Small Brand information, appears on minimized sidebar-->
               <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
@@ -62,7 +62,6 @@
             <div class="main-menu">
               <h5 class="sidenav-heading">Menu</h5>
               <ul id="side-main-menu" class="side-menu list-unstyled">
-                <li id="home"><a > <i class="icon-home"></i>Home</a></li>
                 <li id="linhas"><a > <i class="fas fa-subway"></i>Linhas</a></li>
                 <li id="graficos"><a > <i class="fas fa-chart-pie"></i>Analytcs</a></li>
                 <li id="suporte"><a > <i class="fas fa-headset"></i>Suporte</a></li>
@@ -81,7 +80,7 @@
                   <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
 
                     <!-- Log out-->
-                    <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
+                    <li class="nav-item"><a  class="nav-link logout"> <span class="d-none d-sm-inline-block" ><asp:Button class="btn btn-secondary" runat="server" onclick="logout" Text="Logout" /></span><i class="fa fa-sign-out"></i></a></li>
                   </ul>
                 </div>
               </div>
@@ -90,15 +89,14 @@
           <!-- Header Section-->
           <section class="dashboard-header section-padding">
             <div class="container">
-                <div id="Home">
-                  <div class="jumbotron">
-                    <h1>Home</h1>
-                  </div>
-                </div>
-
+                
                 <div id="Linhas">
                     <!--Modal-->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom:10px;">Cadastrar Máquina</button>
+                    
+
+
+                    <div class="dropdown" style="display:block;">
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom:10px;" aria-haspopup="true" aria-expanded="false">Cadastrar Máquina</button>
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
@@ -110,35 +108,35 @@
                             </button>
                           </div>
                           <div class="modal-body">
-                            <form>
                               <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Maquina:</label>
                               </div>
                               <div class="form-group">
-                                <asp:DropDownList id="DropList" Runat="Server">
+                                <asp:DropDownList id="DropDownListAtivo" Runat="Server">
                                   
                                 </asp:DropDownList>
                               </div>
-                            </form>
+
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Nome da Máquina:</label>
+                                <asp:TextBox runat="server" ID="txt_nome_maquina" class="form-control" />
+                              </div>
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Usuário:</label>
+                              </div>
+                              <div class="form-group">
+                                <asp:DropDownList id="DropDownListUsuario" Runat="Server">
+                                  
+                                </asp:DropDownList>
+                              </div>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Cadastrar</button>
+                            <asp:Button type="button" OnClick="btn_cadastrar" class="btn btn-primary" runat="server" text="Cadastrar"/>
                           </div>
                         </div>
                       </div>
                     </div>
-
-
-                    <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown button
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <input class="dropdown-item" value="vai se fuder namoral" data-id="1"/>
-                        <input class="dropdown-item" value="Esmeralda" data-id="2"/>
-                        <input class="dropdown-item" value="Diamante" data-id="3"/>
-                      </div>
                     </div>
                             <% 
                                 Mainlinee.oshiDAO oshi = new Mainlinee.oshiDAO();
@@ -147,13 +145,90 @@
                                 {
 
                                     String id = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()))[cont].id;
+                                    int idPossui = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()))[cont].idPossui;
+                                    String nomeMaquina = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()))[cont].nome;
                                     Session["idAtivo"] = oshi.selectAtivo(Int32.Parse(Session["Usuario"].ToString()))[cont].id;
                                 %>
-                    <figure class="figure">
+                    <figure class="figure" style="margin-top:20px;">
+                        <figcaption class="figure-caption" style="text-align:center;"><%=nomeMaquina%></figcaption>
+
                         <a href="charts.aspx?id=<%=id %>">
                         <img src="img/computador.jpg"   class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
                         </a> 
-                        <figcaption class="figure-caption"><%=id%></figcaption>
+
+                        <div style="margin-left:45px;">
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Editar">
+                          Editar
+                        </button>
+
+                        <div class="modal fade" id="Editar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="editarLabel">Editar Máquina</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Nome da Máquina:</label>
+                                <asp:TextBox ID="txt_nome_ativo2" class="form-control" runat="server"/>
+                              </div>
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Usuário:</label>
+                              </div>
+                              <div class="form-group">
+                                <asp:DropDownList id="DropDownListUsuario2" Runat="Server">
+                                  
+                                </asp:DropDownList>
+                              </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a class="btn btn-primary" href="dashboard2.aspx?modo=Editar&idMaquina=<%=id %>&idPossui=<%=idPossui %>&idUser=<%=Int32.Parse(Session["Usuario"].ToString()) %>" style="color:#fff;">Editar</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Deletar">
+                          Deletar
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="Deletar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="deleteLabel">Deletar</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                Deseja realmente deletar este item?
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <a class="btn btn-primary" href="dashboard2.aspx?modo=Excluir&idMaquina=<%=id %>&idUser=<%=Int32.Parse(Session["Usuario"].ToString()) %>" style="color:#fff;">Deletar</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        </div>
+                       
+
                     </figure>
 
                             <%

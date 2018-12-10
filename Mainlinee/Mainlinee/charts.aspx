@@ -55,8 +55,8 @@
                 var LINECHARTEXMPLE = $('#lineChartExample');
 
                 <% 
-                    String ativo = Request.Params["id"];
-                        
+        String ativo = Request.Params["id"];
+
                 %>
                 
 
@@ -73,18 +73,18 @@
                         }
                     },
                     data: {
-                        labels: ["January", "February", "March", "April", "May", "June", "July"],
+                        labels: [" ", " ", " ", " ", " ", " ", " "],
                         
                         datasets: [
                             {
-                                label: "<%=ativo%>",
-                                fill: true,
-                                lineTension: 0.3,
+                                label: "Mémoria RAM",
+                                fill: false,
+                                lineTension: 0.8,
                                 backgroundColor: "rgba(51, 179, 90, 0.38)",
                                 borderColor: brandPrimary,
                                 borderCapStyle: 'butt',
                                 borderDash: [],
-                                borderDashOffset: 0.0,  
+                                borderDashOffset: 5.0,  
                                 borderJoinStyle: 'miter',
                                 borderWidth: 1,
                                 pointBorderColor: brandPrimary,
@@ -92,6 +92,52 @@
                                 pointBorderWidth: 1,
                                 pointHoverRadius: 5,
                                 pointHoverBackgroundColor: brandPrimary,
+                                pointHoverBorderColor: "rgba(220,220,220,1)",
+                                pointHoverBorderWidth: 2,
+                                pointRadius: 1,
+                                pointHitRadius: 10,
+                                data: [],
+                                spanGaps: false
+                            },
+                            {
+                                label: "CPU",
+                                fill: false,
+                                lineTension: 0.8,
+                                backgroundColor: "rgba(81, 104, 204,0.4)",
+                                borderColor: "rgba(81, 104, 204,1)",
+                                borderCapStyle: 'butt',
+                                borderDash: [],
+                                borderDashOffset: 0.0,
+                                borderJoinStyle: 'miter',
+                                borderWidth: 1,
+                                pointBorderColor: "rgba(75,192,192,1)",
+                                pointBackgroundColor: "#fff",
+                                pointBorderWidth: 1,
+                                pointHoverRadius: 5,
+                                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                                pointHoverBorderColor: "rgba(220,220,220,1)",
+                                pointHoverBorderWidth: 2,
+                                pointRadius: 1,
+                                pointHitRadius: 10,
+                                data: [],
+                                spanGaps: false
+                            },
+                            {
+                                label: "HD",
+                                fill: false,
+                                lineTension: 0.8,
+                                backgroundColor: "rgba(244, 78, 66,0.4)",
+                                borderColor: "rgba(244, 78, 66,1)",
+                                borderCapStyle: 'butt',
+                                borderDash: [],
+                                borderDashOffset: 0.0,
+                                borderJoinStyle: 'miter',
+                                borderWidth: 1,
+                                pointBorderColor: "rgba(75,192,192,1)",
+                                pointBackgroundColor: "#fff",
+                                pointBorderWidth: 1,
+                                pointHoverRadius: 5,
+                                pointHoverBackgroundColor: "rgba(75,192,192,1)",
                                 pointHoverBorderColor: "rgba(220,220,220,1)",
                                 pointHoverBorderWidth: 2,
                                 pointRadius: 1,
@@ -113,15 +159,141 @@
                         
                         window.myLine.update();
                         */
-                    };
+        };
 
-                  
+       
+         function attHD() {
+            var xhttp = new XMLHttpRequest();
+                
 
+                <% 
+                String idMaquina = "";
+                if (Request.QueryString["id"] != null){
+                    idMaquina = Request.Params["id"];
 
+                }%>
+                xhttp.open("GET", "getHD.aspx?id=<%=idMaquina%>", true);
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
+                        //pega os dados da página getOshi.aspx e coloca eles no array numeros
+                        HD = xhttp.responseText.split("+");
 
-                var xhttp = new XMLHttpRequest();
+                        //verifica se o array está vazio
+                        if (HD[0] != "") {
+                            var div = document.getElementById("total").innerText = HD[0];
+                            var div = document.getElementById("disponivel").innerText = HD[1];
+                            var div = document.getElementById("usado").innerText = HD[2];
+                            
+                        }
+
+                    }
+                }
+                xhttp.send();
+        }  
+
+        
+        function attCPU() {
+            var xhttp = new XMLHttpRequest();
+                
+
+                <% 
+                if (Request.QueryString["id"] != null){
+                    idMaquina = Request.Params["id"];
+
+                }%>
+                xhttp.open("GET", "getCPU.aspx?id=<%=idMaquina%>", true);
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
+                        //pega os dados da página getOshi.aspx e coloca eles no array numeros
+                        cpu = xhttp.responseText.split("+");
+
+                        //verifica se o array está vazio
+                        if (cpu[0] != "") {
+
+                             
+                             document.getElementById("threads").innerText = cpu[0];
+                             document.getElementById("processos").innerText = cpu[1];
+                            document.getElementById("interrupcoes").innerText = cpu[2];
+                            document.getElementById("versao").innerText = cpu[3];
+                            document.getElementById("atividade").innerText = cpu[4];
+                            console.log("este é o cpu"+cpu[0]);
+                            
+                        }
+
+                    }
+                }
+                xhttp.send();
+        }  
+
+        function attRAM() {
+            var xhttp = new XMLHttpRequest();
+
+                <% 
+                if (Request.QueryString["id"] != null){
+                    idMaquina = Request.Params["id"];
+
+                }%>
+                xhttp.open("GET", "getRAM.aspx?id=<%=idMaquina%>", true);
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
+                        //pega os dados da página getOshi.aspx e coloca eles no array numeros
+                        RAM = xhttp.responseText.split("+");
+
+                        //verifica se o array está vazio
+                        if (RAM[0] != "") {
+                            var div = document.getElementById("totalRAM").innerText = RAM[0];
+                            var div = document.getElementById("disponivelRAM").innerText = RAM[1];
+                            var div = document.getElementById("usadoRAM").innerText = RAM[2];
+                            
+                        }
+
+                    }
+                }
+                xhttp.send();
+        }
+
+        function attRede() {
+            var xhttp = new XMLHttpRequest();
                 //abre a página getOshi.aspx
-                xhttp.open("GET", "getOshi.aspx", true);
+
+                <% 
+                
+                if (Request.QueryString["id"] != null){
+                    idMaquina = Request.Params["id"];
+
+                }%>
+                xhttp.open("GET", "getTime.aspx?id=<%=idMaquina%>", true);
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
+                        //pega os dados da página getOshi.aspx e coloca eles no array numeros
+                        rede = xhttp.responseText.split("+");
+
+                        //verifica se o array está vazio
+                        if (rede[0] != "") {
+                            //seleciona as divs aonde os dados vão aparecer
+                            var div = document.getElementById("dominio").innerText = rede[0];
+                            var div = document.getElementById("nome_rede").innerText = rede[1];
+                            var div = document.getElementById("upload").innerText = rede[2];
+                            var div = document.getElementById("download").innerText = rede[2];
+                            
+                        }
+
+                    }
+                }
+                xhttp.send();
+        }
+
+        function att() {
+            var xhttp = new XMLHttpRequest();
+                //abre a página getOshi.aspx
+
+                <% 
+                
+                if (Request.QueryString["id"] != null){
+                    idMaquina = Request.Params["id"];
+
+                }%>
+                xhttp.open("GET", "getRede.aspx?id=<%=idMaquina%>", true);
                 xhttp.onreadystatechange = function () {
                     if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
                         //pega os dados da página getOshi.aspx e coloca eles no array numeros
@@ -137,52 +309,76 @@
                     }
                 }
                 xhttp.send();
+        }
 
+        function att() {
+            var xhttp = new XMLHttpRequest();
+                //abre a página getOshi.aspx
 
+                <% 
                 
+                if (Request.QueryString["id"] != null){
+                    idMaquina = Request.Params["id"];
 
+                }%>
+                xhttp.open("GET", "getOshi.aspx?id=<%=idMaquina%>", true);
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
+                        //pega os dados da página getOshi.aspx e coloca eles no array numeros
+                        numeros = xhttp.responseText.split("+");
 
+                        //verifica se o array está vazio
+                        if (numeros[0] != "") {
+                            //seleciona as divs aonde os dados vão aparecer
+                            console.log(numeros[0]+"a,khhhhhhhh");
+                            
+                        }
 
-          //  });
-
-            /*
-                function addData(chart, label, data) {
-                    chart.data.labels.push(label);
-                    chart.data.datasets.forEach((dataset) => {
-                        dataset.data.push(data);
-                    });
-                    chart.update();
+                    }
                 }
-              */
-
-            
-
-
-        
-        function PegarDados(dados) {
-            
+                xhttp.send();
+        }
+                
+        var a = 0;
+        function PegarDados(dados,a) {           
             //config.data.datasets.data.push(dados[0]);
             //console.log("teste se ta indo" + dados[0]);
-
-            config.data.datasets.forEach(function (dataset) {
-                dataset.data.push(dados[2]);
-                console.log("teste se ta indo" + dados[2]);
+            //config.data.labels.push(time);
+            config.data.datasets.forEach(function (dataset,index) {
+                
+                dataset.data.push(dados[index]);
+                
+                if (a > 6) {
+                    dataset.data.shift();
+                }
             });
-                        
-                    
+
+
+            //config.data.push(' ');    // add the new value to the right
+            //config.data.shift(); 
 
             window.myLine.update();
         }
-
-   
-
-        
-        //essa parte executa a função a cada 10 segundos
-        
+      
+        //essa parte executa a função a cada 5 segundos
+        var i = 0;
         setInterval(() => {
+            
             try {
-  
-               PegarDados(numeros);
+                att();
+                attHD();
+                //attTime();
+                attCPU();
+                attRAM();
+                attRede();
+                PegarDados(numeros,i);
+                /*
+                if (i > 4) {
+                    removeData2();
+                    console.log("aki"+i);
+                }*/
+                i++;
+                
               
             } catch (err) { console.log(err); }
         }, 2000);
@@ -192,11 +388,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            testeeeee
-            <% String teste =  Request.Params["id"]; %>
-
-            <%=teste %>
-
+            <% String idAtivoTeste =  Request.Params["id"]; %>
             <!-- Side Navbar -->
         <nav class="side-navbar">
           <div class="side-navbar-wrapper">
@@ -205,7 +397,7 @@
               <!-- User Info-->
               <div class="sidenav-header-inner text-center">
                   <% String nome = Session["nomeUser"].ToString(); %>
-                  <h2 id="nomeUser" class="h5"><%=nome %></h2><span>Web Developer</span>
+                  <h2 id="nomeUser" class="h5"><%=nome %></h2>
               </div>
               <!-- Small Brand information, appears on minimized sidebar-->
               <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
@@ -214,7 +406,11 @@
             <div class="main-menu">
               <h5 class="sidenav-heading">Menu</h5>
               <ul id="side-main-menu" class="side-menu list-unstyled">
-                <li id="home"><a> <i class="icon-home"></i>Voltar</a></li>
+                <li id="home"><a href="dashboard2.aspx"> <img src="img/voltar.png"/>Voltar</a></li>
+                <li id="cpu"><a href="#"> <img src="img/voltar.png"/>CPU</a></li>
+                <li id="hd"><a href="#"> <img src="img/voltar.png"/>HD</a></li>
+                <li id="ram"><a href="#"> <img src="img/voltar.png"/>Mémoria RAM</a></li>
+                <li id="rede"><a href="#"> <img src="img/voltar.png"/>REDE</a></li>
               </ul>
             </div>
           </div>
@@ -230,7 +426,7 @@
                   <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
 
                     <!-- Log out-->
-                    <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
+                    <li class="nav-item"><a class="nav-link logout"> <span class="d-none d-sm-inline-block"><asp:Button class="btn btn-secondary" runat="server" onclick="logout" Text="Logout" /></span><i class="fa fa-sign-out"></i></a></li>
                   </ul>
                 </div>
               </div>
@@ -240,9 +436,87 @@
           <section class="dashboard-header section-padding">
             <div class="container">
                 <div id="Home">
-                    <div class="card-body">
-                        <canvas id="lineChartExample"></canvas>
+
+                    <div class="container">
+                      <div class="row">
+                        <div class="col"></div>
+                          <% 
+                              Mainlinee.oshiDAO oshi = new Mainlinee.oshiDAO();
+                              String nomeSO = oshi.selectAtivoById(idAtivoTeste).SO;
+                             
+                              
+                                  %>
+                        <div class="col"><b>Sistema Operacional:</b> <%=nomeSO%></div>
+                        
+                      </div>
                     </div>
+
+                    <div class="card-body">
+                        <canvas id="lineChartExample" style="width:70%;height:300px;"></canvas>
+                    </div>
+                    <div class="content_cpu">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col"><b>Versão CPU:</b></div>
+                            <div class="col"><b>Tempo de Atividade:</b></div>
+                            <div class="col"><b>Numero de Threads:</b></div>
+                            <div class="col"><b>Numero de Processos:</b></div>
+                            <div class="col"><b>Interrupções:</b></div>
+                            <div class="w-100"></div>
+                            <div class="col" id="versao"></div>
+                            <div class="col" id="atividade"></div>
+                            <div class="col" id="threads"></div>
+                            <div class="col" id="processos"></div>
+                            <div class="col" id="interrupcoes"></div>
+
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="content_hd">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col"><b>Espaço Total:</b></div>
+                            <div class="col"><b>Espaço Disponível:</b></div>
+                            <div class="col"><b>Espaço Usado:</b></div>
+                            <div class="w-100"></div>
+                            <div class="col" id="total"></div>
+                            <div class="col" id="disponivel"></div>
+                            <div class="col" id="usado"></div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="content_ram">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col"><b>Memória Total:</b></div>
+                            <div class="col"><b>Memória Disponível:</b></div>
+                            <div class="col"><b>Memória Usada:</b></div>
+                            <div class="w-100"></div>
+                            <div class="col" id="totalRAM"></div>
+                            <div class="col" id="disponivelRAM"></div>
+                            <div class="col" id="usadoRAM"></div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="content_rede">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col"><b>Domínio de Rede:</b></div>
+                            <div class="col"><b>Nome da Rede:</b></div>
+                              <div class="col"><b>Upload:</b></div>
+                            <div class="col"><b>Download:</b></div>
+                            <div class="w-100"></div>
+                            <div class="col" id="dominio">Column</div>
+                            <div class="col" id="nome_rede">Column</div>
+                            <div class="col" id="upload">Column</div>
+                            <div class="col" id="download">Column</div>
+                          </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
           </section>
@@ -263,6 +537,7 @@
     </form>
 
     <!-- JavaScript files-->
+    <script src="js/pages/chart.js"></script>
     <script src="js/bootstrap-dropselect.min.js"></script>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>

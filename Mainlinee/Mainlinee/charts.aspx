@@ -55,8 +55,8 @@
                 var LINECHARTEXMPLE = $('#lineChartExample');
 
                 <% 
-                    String ativo = Request.Params["id"];
-                        
+        String ativo = Request.Params["id"];
+
                 %>
                 
 
@@ -159,15 +159,169 @@
                         
                         window.myLine.update();
                         */
-                    };
+        };
 
-                  
+       
+         function attHD() {
+            var xhttp = new XMLHttpRequest();
+                
 
+                <% 
+                String idMaquina = "";
+                if (Request.QueryString["id"] != null){
+                    idMaquina = Request.Params["id"];
+
+                }%>
+                xhttp.open("GET", "getHD.aspx?id=<%=idMaquina%>", true);
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
+                        //pega os dados da página getOshi.aspx e coloca eles no array numeros
+                        HD = xhttp.responseText.split("+");
+
+                        //verifica se o array está vazio
+                        if (HD[0] != "") {
+                            var div = document.getElementById("total").innerText = HD[0];
+                            var div = document.getElementById("disponivel").innerText = HD[1];
+                            var div = document.getElementById("usado").innerText = HD[2];
+                            
+                        }
+
+                    }
+                }
+                xhttp.send();
+        }  
+
+        
+        function attCPU() {
+            var xhttp = new XMLHttpRequest();
+                
+
+                <% 
+                if (Request.QueryString["id"] != null){
+                    idMaquina = Request.Params["id"];
+
+                }%>
+                xhttp.open("GET", "getCPU.aspx?id=<%=idMaquina%>", true);
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
+                        //pega os dados da página getOshi.aspx e coloca eles no array numeros
+                        cpu = xhttp.responseText.split("+");
+
+                        //verifica se o array está vazio
+                        if (cpu[0] != "") {
+
+                             
+                             document.getElementById("threads").innerText = cpu[0];
+                             document.getElementById("processos").innerText = cpu[1];
+                            document.getElementById("interrupcoes").innerText = cpu[2];
+                            document.getElementById("versao").innerText = cpu[3];
+                            document.getElementById("atividade").innerText = cpu[4];
+                            console.log("este é o cpu"+cpu[0]);
+                            
+                        }
+
+                    }
+                }
+                xhttp.send();
+        }  
+
+        function attRAM() {
+            var xhttp = new XMLHttpRequest();
+
+                <% 
+                if (Request.QueryString["id"] != null){
+                    idMaquina = Request.Params["id"];
+
+                }%>
+                xhttp.open("GET", "getRAM.aspx?id=<%=idMaquina%>", true);
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
+                        //pega os dados da página getOshi.aspx e coloca eles no array numeros
+                        RAM = xhttp.responseText.split("+");
+
+                        //verifica se o array está vazio
+                        if (RAM[0] != "") {
+                            var div = document.getElementById("totalRAM").innerText = RAM[0];
+                            var div = document.getElementById("disponivelRAM").innerText = RAM[1];
+                            var div = document.getElementById("usadoRAM").innerText = RAM[2];
+                            
+                        }
+
+                    }
+                }
+                xhttp.send();
+        }
+
+        function attRede() {
+            var xhttp = new XMLHttpRequest();
+                //abre a página getOshi.aspx
+
+                <% 
+                
+                if (Request.QueryString["id"] != null){
+                    idMaquina = Request.Params["id"];
+
+                }%>
+                xhttp.open("GET", "getTime.aspx?id=<%=idMaquina%>", true);
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
+                        //pega os dados da página getOshi.aspx e coloca eles no array numeros
+                        rede = xhttp.responseText.split("+");
+
+                        //verifica se o array está vazio
+                        if (rede[0] != "") {
+                            //seleciona as divs aonde os dados vão aparecer
+                            var div = document.getElementById("dominio").innerText = rede[0];
+                            var div = document.getElementById("nome_rede").innerText = rede[1];
+                            var div = document.getElementById("upload").innerText = rede[2];
+                            var div = document.getElementById("download").innerText = rede[2];
+                            
+                        }
+
+                    }
+                }
+                xhttp.send();
+        }
 
         function att() {
             var xhttp = new XMLHttpRequest();
                 //abre a página getOshi.aspx
-                xhttp.open("GET", "getOshi.aspx", true);
+
+                <% 
+                
+                if (Request.QueryString["id"] != null){
+                    idMaquina = Request.Params["id"];
+
+                }%>
+                xhttp.open("GET", "getRede.aspx?id=<%=idMaquina%>", true);
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
+                        //pega os dados da página getOshi.aspx e coloca eles no array numeros
+                        numeros = xhttp.responseText.split("+");
+
+                        //verifica se o array está vazio
+                        if (numeros[0] != "") {
+                            //seleciona as divs aonde os dados vão aparecer
+                            console.log(numeros[0]+"a,khhhhhhhh");
+                            
+                        }
+
+                    }
+                }
+                xhttp.send();
+        }
+
+        function att() {
+            var xhttp = new XMLHttpRequest();
+                //abre a página getOshi.aspx
+
+                <% 
+                
+                if (Request.QueryString["id"] != null){
+                    idMaquina = Request.Params["id"];
+
+                }%>
+                xhttp.open("GET", "getOshi.aspx?id=<%=idMaquina%>", true);
                 xhttp.onreadystatechange = function () {
                     if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
                         //pega os dados da página getOshi.aspx e coloca eles no array numeros
@@ -189,11 +343,11 @@
         function PegarDados(dados,a) {           
             //config.data.datasets.data.push(dados[0]);
             //console.log("teste se ta indo" + dados[0]);
-            
+            //config.data.labels.push(time);
             config.data.datasets.forEach(function (dataset,index) {
                 
                 dataset.data.push(dados[index]);
-              
+                
                 if (a > 6) {
                     dataset.data.shift();
                 }
@@ -209,8 +363,14 @@
         //essa parte executa a função a cada 5 segundos
         var i = 0;
         setInterval(() => {
+            
             try {
                 att();
+                attHD();
+                //attTime();
+                attCPU();
+                attRAM();
+                attRede();
                 PegarDados(numeros,i);
                 /*
                 if (i > 4) {
@@ -228,10 +388,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <% String teste =  Request.Params["id"]; %>
-
-            <%=teste %>
-
+            <% String idAtivoTeste =  Request.Params["id"]; %>
             <!-- Side Navbar -->
         <nav class="side-navbar">
           <div class="side-navbar-wrapper">
@@ -250,6 +407,10 @@
               <h5 class="sidenav-heading">Menu</h5>
               <ul id="side-main-menu" class="side-menu list-unstyled">
                 <li id="home"><a href="dashboard2.aspx"> <img src="img/voltar.png"/>Voltar</a></li>
+                <li id="cpu"><a href="#"> <img src="img/voltar.png"/>CPU</a></li>
+                <li id="hd"><a href="#"> <img src="img/voltar.png"/>HD</a></li>
+                <li id="ram"><a href="#"> <img src="img/voltar.png"/>Mémoria RAM</a></li>
+                <li id="rede"><a href="#"> <img src="img/voltar.png"/>REDE</a></li>
               </ul>
             </div>
           </div>
@@ -275,9 +436,87 @@
           <section class="dashboard-header section-padding">
             <div class="container">
                 <div id="Home">
-                    <div class="card-body">
-                        <canvas id="lineChartExample"></canvas>
+
+                    <div class="container">
+                      <div class="row">
+                        <div class="col"></div>
+                          <% 
+                              Mainlinee.oshiDAO oshi = new Mainlinee.oshiDAO();
+                              String nomeSO = oshi.selectAtivoById(idAtivoTeste).SO;
+                             
+                              
+                                  %>
+                        <div class="col"><b>Sistema Operacional:</b> <%=nomeSO%></div>
+                        
+                      </div>
                     </div>
+
+                    <div class="card-body">
+                        <canvas id="lineChartExample" style="width:70%;height:300px;"></canvas>
+                    </div>
+                    <div class="content_cpu">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col"><b>Versão CPU:</b></div>
+                            <div class="col"><b>Tempo de Atividade:</b></div>
+                            <div class="col"><b>Numero de Threads:</b></div>
+                            <div class="col"><b>Numero de Processos:</b></div>
+                            <div class="col"><b>Interrupções:</b></div>
+                            <div class="w-100"></div>
+                            <div class="col" id="versao"></div>
+                            <div class="col" id="atividade"></div>
+                            <div class="col" id="threads"></div>
+                            <div class="col" id="processos"></div>
+                            <div class="col" id="interrupcoes"></div>
+
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="content_hd">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col"><b>Espaço Total:</b></div>
+                            <div class="col"><b>Espaço Disponível:</b></div>
+                            <div class="col"><b>Espaço Usado:</b></div>
+                            <div class="w-100"></div>
+                            <div class="col" id="total"></div>
+                            <div class="col" id="disponivel"></div>
+                            <div class="col" id="usado"></div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="content_ram">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col"><b>Memória Total:</b></div>
+                            <div class="col"><b>Memória Disponível:</b></div>
+                            <div class="col"><b>Memória Usada:</b></div>
+                            <div class="w-100"></div>
+                            <div class="col" id="totalRAM"></div>
+                            <div class="col" id="disponivelRAM"></div>
+                            <div class="col" id="usadoRAM"></div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="content_rede">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col"><b>Domínio de Rede:</b></div>
+                            <div class="col"><b>Nome da Rede:</b></div>
+                              <div class="col"><b>Upload:</b></div>
+                            <div class="col"><b>Download:</b></div>
+                            <div class="w-100"></div>
+                            <div class="col" id="dominio">Column</div>
+                            <div class="col" id="nome_rede">Column</div>
+                            <div class="col" id="upload">Column</div>
+                            <div class="col" id="download">Column</div>
+                          </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
           </section>
@@ -298,6 +537,7 @@
     </form>
 
     <!-- JavaScript files-->
+    <script src="js/pages/chart.js"></script>
     <script src="js/bootstrap-dropselect.min.js"></script>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>

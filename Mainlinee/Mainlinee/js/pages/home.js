@@ -35,7 +35,6 @@ $(document).ready(function() {
 
     // LINHAS
     linhas.click(function() {
-      Boxhome.hide();
       Boxgraficos.hide();
       Boxsuporte.hide();
         Boxlinhas.show();

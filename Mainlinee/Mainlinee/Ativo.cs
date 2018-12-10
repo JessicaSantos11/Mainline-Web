@@ -11,8 +11,9 @@ namespace Mainlinee
         public int idPossui{ get; set; }
         public String id { get; set; }
         public String nome { get; set; }
+        public String SO { get; set; }
 
-       
+
 
 
     }

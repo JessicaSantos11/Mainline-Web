@@ -407,10 +407,10 @@
               <h5 class="sidenav-heading">Menu</h5>
               <ul id="side-main-menu" class="side-menu list-unstyled">
                 <li id="home"><a href="dashboard2.aspx"> <img src="img/voltar.png"/>Voltar</a></li>
-                <li id="cpu"><a href="#"> <img src="img/voltar.png"/>CPU</a></li>
-                <li id="hd"><a href="#"> <img src="img/voltar.png"/>HD</a></li>
-                <li id="ram"><a href="#"> <img src="img/voltar.png"/>Mémoria RAM</a></li>
-                <li id="rede"><a href="#"> <img src="img/voltar.png"/>REDE</a></li>
+                <li id="cpu"><a href="#"> CPU</a></li>
+                <li id="hd"><a href="#"> HD</a></li>
+                <li id="ram"><a href="#"> RAM</a></li>
+                <li id="rede"><a href="#"> REDE</a></li>
               </ul>
             </div>
           </div>
@@ -511,8 +511,8 @@
                             <div class="w-100"></div>
                             <div class="col" id="dominio">Column</div>
                             <div class="col" id="nome_rede">Column</div>
-                            <div class="col" id="upload">Column</div>
-                            <div class="col" id="download">Column</div>
+                            <div class="col" id="upload">0</div>
+                            <div class="col" id="download">0</div>
                           </div>
                         </div>
                     </div>

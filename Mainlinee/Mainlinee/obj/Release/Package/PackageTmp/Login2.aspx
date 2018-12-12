@@ -23,7 +23,6 @@
                 <a class="btn-close"><i class="fa fa-times"></i></a> 
                 <ul>
                     <li><a href="Default.aspx">Início</a></li>
-                    <li><a href="Cadastro.aspx">Cadastro</a></li>
                 </ul>
             </nav>
         </header>

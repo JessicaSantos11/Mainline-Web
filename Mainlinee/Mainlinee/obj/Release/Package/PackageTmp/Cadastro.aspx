@@ -25,7 +25,6 @@
 				<a class="btn-close"><i class="fa fa-times"></i></a> <!-- é o link para fechar o menu. o "x" irá fechar o menu-->
 				<ul>
 					<li><a href="Default.aspx">Início</a></li>
-                    <li><a href="login2.aspx">Login</a></li>
 				</ul>
 			</nav>
 		</header>

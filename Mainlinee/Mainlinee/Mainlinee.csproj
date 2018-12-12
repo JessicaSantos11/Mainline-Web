@@ -167,9 +167,7 @@
     <Content Include="js\grasp_mobile_progress_circle-1.0.0.min.js" />
     <Content Include="js\grasp_mobile_progress_circle-10.0.0.min.js" />
     <Content Include="js\hammer.min.js" />
-    <None Include="js\jquery-2.1.1.intellisense.js" />
     <Content Include="js\jquery-2.1.1.js" />
-    <Content Include="js\jquery-2.1.1.min.js" />
     <Content Include="js\jquery.maskedinput.js" />
     <Content Include="js\jquery.maskedinput.min.js" />
     <Content Include="js\jquery.min.js" />
@@ -409,7 +407,7 @@
     <Content Include="vendor\font-awesome\fonts\FontAwesome.otf" />
     <Content Include="vendor\jquery.cookie\component.json" />
     <Content Include="vendor\jquery.cookie\cookie.jquery.json" />
-    <Content Include="js\jquery-2.1.1.min.map" />
+    <None Include="Properties\PublishProfiles\Mainline - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

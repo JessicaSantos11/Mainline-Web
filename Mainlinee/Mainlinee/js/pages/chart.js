@@ -25,7 +25,7 @@ $(document).ready(function () {
     hd = $(".content_hd");
     rede = $(".content_rede");
 
-    cpu.hide();
+    cpu.show();
     ram.hide();
     hd.hide();
     rede.hide();

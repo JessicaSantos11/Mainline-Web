@@ -61,94 +61,48 @@
                 
 
                 var config = {
-                    type: 'line',
-                    options: {
-                        scales: {
+			            type: 'line',
+			            data: {
+				            labels: [' ', ' ', ' ', ' ', ' ', ' ' , ' '],
+				            datasets: [{
+					            label: 'Memória RAM',
+					            fill: false,
+					            backgroundColor: "rgba(51, 179, 90, 0.38)",
+                                borderColor: brandPrimary,
+					            data: [
+						
+					            ],
+				            }, {
+					            label: 'CPU',
+					            fill: false,
+					            backgroundColor: "rgba(81, 104, 204,0.4)",
+                                borderColor: "rgba(81, 104, 204,1)",
+					            data: [
+						
+					            ],
+				            }, {
+					            label: 'HD',
+					            backgroundColor: "rgba(244, 78, 66,0.4)",
+                                borderColor: "rgba(244, 78, 66,1)",
+					            data: [
+						
+					            ],
+					            fill: false,
+                                }
+
+
+                            ]
+			            },
+			            options: {
+				            scales: {
                             yAxes: [{
                                 ticks: {
                                     max: 100,
                                     min: 0
                                 }
                             }]
-                        }
-                    },
-                    data: {
-                        labels: [" ", " ", " ", " ", " ", " ", " "],
-                        
-                        datasets: [
-                            {
-                                label: "Mémoria RAM",
-                                fill: false,
-                                lineTension: 0.8,
-                                backgroundColor: "rgba(51, 179, 90, 0.38)",
-                                borderColor: brandPrimary,
-                                borderCapStyle: 'butt',
-                                borderDash: [],
-                                borderDashOffset: 5.0,  
-                                borderJoinStyle: 'miter',
-                                borderWidth: 1,
-                                pointBorderColor: brandPrimary,
-                                pointBackgroundColor: "#fff",
-                                pointBorderWidth: 1,
-                                pointHoverRadius: 5,
-                                pointHoverBackgroundColor: brandPrimary,
-                                pointHoverBorderColor: "rgba(220,220,220,1)",
-                                pointHoverBorderWidth: 2,
-                                pointRadius: 1,
-                                pointHitRadius: 10,
-                                data: [],
-                                spanGaps: false
-                            },
-                            {
-                                label: "CPU",
-                                fill: false,
-                                lineTension: 0.8,
-                                backgroundColor: "rgba(81, 104, 204,0.4)",
-                                borderColor: "rgba(81, 104, 204,1)",
-                                borderCapStyle: 'butt',
-                                borderDash: [],
-                                borderDashOffset: 0.0,
-                                borderJoinStyle: 'miter',
-                                borderWidth: 1,
-                                pointBorderColor: "rgba(75,192,192,1)",
-                                pointBackgroundColor: "#fff",
-                                pointBorderWidth: 1,
-                                pointHoverRadius: 5,
-                                pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                                pointHoverBorderColor: "rgba(220,220,220,1)",
-                                pointHoverBorderWidth: 2,
-                                pointRadius: 1,
-                                pointHitRadius: 10,
-                                data: [],
-                                spanGaps: false
-                            },
-                            {
-                                label: "HD",
-                                fill: false,
-                                lineTension: 0.8,
-                                backgroundColor: "rgba(244, 78, 66,0.4)",
-                                borderColor: "rgba(244, 78, 66,1)",
-                                borderCapStyle: 'butt',
-                                borderDash: [],
-                                borderDashOffset: 0.0,
-                                borderJoinStyle: 'miter',
-                                borderWidth: 1,
-                                pointBorderColor: "rgba(75,192,192,1)",
-                                pointBackgroundColor: "#fff",
-                                pointBorderWidth: 1,
-                                pointHoverRadius: 5,
-                                pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                                pointHoverBorderColor: "rgba(220,220,220,1)",
-                                pointHoverBorderWidth: 2,
-                                pointRadius: 1,
-                                pointHitRadius: 10,
-                                data: [],
-                                spanGaps: false
-                            }
-                        ]
-                    }
-
-                }
+                        }}
+		            };
                     window.onload = function () {
                         var ctx = document.getElementById('lineChartExample').getContext('2d');
                         window.myLine = new Chart(ctx, config);
@@ -216,7 +170,7 @@
                             document.getElementById("interrupcoes").innerText = cpu[2];
                             document.getElementById("versao").innerText = cpu[3];
                             document.getElementById("atividade").innerText = cpu[4];
-                            console.log("este é o cpu"+cpu[0]);
+                           
                             
                         }
 
@@ -262,7 +216,7 @@
                     idMaquina = Request.Params["id"];
 
                 }%>
-                xhttp.open("GET", "getTime.aspx?id=<%=idMaquina%>", true);
+                xhttp.open("GET", "getRede.aspx?id=<%=idMaquina%>", true);
                 xhttp.onreadystatechange = function () {
                     if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
                         //pega os dados da página getOshi.aspx e coloca eles no array numeros
@@ -283,33 +237,7 @@
                 xhttp.send();
         }
 
-        function att() {
-            var xhttp = new XMLHttpRequest();
-                //abre a página getOshi.aspx
-
-                <% 
-                
-                if (Request.QueryString["id"] != null){
-                    idMaquina = Request.Params["id"];
-
-                }%>
-                xhttp.open("GET", "getRede.aspx?id=<%=idMaquina%>", true);
-                xhttp.onreadystatechange = function () {
-                    if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
-                        //pega os dados da página getOshi.aspx e coloca eles no array numeros
-                        numeros = xhttp.responseText.split("+");
-
-                        //verifica se o array está vazio
-                        if (numeros[0] != "") {
-                            //seleciona as divs aonde os dados vão aparecer
-                            console.log(numeros[0]+"a,khhhhhhhh");
-                            
-                        }
-
-                    }
-                }
-                xhttp.send();
-        }
+        
 
         function att() {
             var xhttp = new XMLHttpRequest();
@@ -330,7 +258,7 @@
                         //verifica se o array está vazio
                         if (numeros[0] != "") {
                             //seleciona as divs aonde os dados vão aparecer
-                            console.log(numeros[0]+"a,khhhhhhhh");
+                            
                             
                         }
 
@@ -407,10 +335,10 @@
               <h5 class="sidenav-heading">Menu</h5>
               <ul id="side-main-menu" class="side-menu list-unstyled">
                 <li id="home"><a href="dashboard2.aspx"> <img src="img/voltar.png"/>Voltar</a></li>
-                <li id="cpu"><a href="#"> <img src="img/voltar.png"/>CPU</a></li>
-                <li id="hd"><a href="#"> <img src="img/voltar.png"/>HD</a></li>
-                <li id="ram"><a href="#"> <img src="img/voltar.png"/>Mémoria RAM</a></li>
-                <li id="rede"><a href="#"> <img src="img/voltar.png"/>REDE</a></li>
+                <li id="cpu"><a> CPU</a></li>
+                <li id="hd"><a> HD</a></li>
+                <li id="ram"><a> RAM</a></li>
+                <li id="rede"><a> REDE</a></li>
               </ul>
             </div>
           </div>
@@ -437,6 +365,7 @@
             <div class="container">
                 <div id="Home">
 
+
                     <div class="container">
                       <div class="row">
                         <div class="col"></div>
@@ -446,7 +375,10 @@
                              
                               
                                   %>
-                        <div class="col"><b>Sistema Operacional:</b> <%=nomeSO%></div>
+                        <%--<div class="col"><b>Sistema Operacional:</b> <%=nomeSO%></div>--%>
+
+                        <div class="w-100"></div>
+                        <div class="col">% de Utilização</div>
                         
                       </div>
                     </div>
@@ -455,68 +387,105 @@
                         <canvas id="lineChartExample" style="width:70%;height:300px;"></canvas>
                     </div>
                     <div class="content_cpu">
-                        <div class="container">
+                        <div class="container" style="margin-top:10px;">
                           <div class="row">
-                            <div class="col"><b>Versão CPU:</b></div>
-                            <div class="col"><b>Tempo de Atividade:</b></div>
-                            <div class="col"><b>Numero de Threads:</b></div>
-                            <div class="col"><b>Numero de Processos:</b></div>
-                            <div class="col"><b>Interrupções:</b></div>
+                            <div class="col">Versão CPU:</div>
+                            <div class="col">Tempo de Atividade:</div>
                             <div class="w-100"></div>
-                            <div class="col" id="versao"></div>
-                            <div class="col" id="atividade"></div>
-                            <div class="col" id="threads"></div>
-                            <div class="col" id="processos"></div>
-                            <div class="col" id="interrupcoes"></div>
+                            <div class="col"><b id="versao"></b></div>
+                            <div class="col"><b id="atividade"></b></div>
+                          </div>
+                        </div>
+
+                        <div class="container" style="margin-top:10px;">
+                          <div class="row">
+                            <div class="col">Threads:</div>
+                            <div class="col">Processos:</div>
+                            <div class="w-100"></div>
+                            <div class="col"><b id="threads"></b></div>
+                            <div class="col"><b id="processos"></b></div>
+
+                          </div>
+                        </div>
+
+                        <div class="container" style="margin-top:10px;">
+                          <div class="row">
+                            <div class="col">Interrupções:</div>
+                            <div class="w-100"></div>
+                            <div class="col"><b id="interrupcoes"></b></div>
 
                           </div>
                         </div>
                     </div>
 
                     <div class="content_hd">
-                        <div class="container">
+                        <div class="container" style="margin-top:10px;">
                           <div class="row">
-                            <div class="col"><b>Espaço Total:</b></div>
-                            <div class="col"><b>Espaço Disponível:</b></div>
-                            <div class="col"><b>Espaço Usado:</b></div>
+                            <div class="col">Espaço Total:</div>
+                            <div class="col">Espaço Disponível:</div>
+                            <div class="col">Espaço Usado:</div>
                             <div class="w-100"></div>
-                            <div class="col" id="total"></div>
-                            <div class="col" id="disponivel"></div>
-                            <div class="col" id="usado"></div>
+                            <div class="col"><b id="total"></b></div>
+                            <div class="col"><b id="disponivel"></b></div>
+                            <div class="col"><b id="usado"></b></div>
                           </div>
                         </div>
                     </div>
 
                     <div class="content_ram">
-                        <div class="container">
+                        <div class="container" style="margin-top:10px;">
                           <div class="row">
-                            <div class="col"><b>Memória Total:</b></div>
-                            <div class="col"><b>Memória Disponível:</b></div>
-                            <div class="col"><b>Memória Usada:</b></div>
+                            <div class="col">Memória Total:</div>
+                            <div class="col">Memória Disponível:</div>
+                            <div class="col">Memória Usada:</div>
                             <div class="w-100"></div>
-                            <div class="col" id="totalRAM"></div>
-                            <div class="col" id="disponivelRAM"></div>
-                            <div class="col" id="usadoRAM"></div>
+                            <div class="col"><b id="totalRAM"></b></div>
+                            <div class="col"><b  id="disponivelRAM"></b></div>
+                            <div class="col"><b  id="usadoRAM"></b></div>
                           </div>
                         </div>
                     </div>
 
-                    <div class="content_rede">
-                        <div class="container">
+                    <div class="content_rede" >
+                        <div class="container" style="margin-top:10px;">
                           <div class="row">
-                            <div class="col"><b>Domínio de Rede:</b></div>
-                            <div class="col"><b>Nome da Rede:</b></div>
-                              <div class="col"><b>Upload:</b></div>
-                            <div class="col"><b>Download:</b></div>
+                            <div class="col">Domínio:</div>
+                            <div class="col">Nome:</div>
                             <div class="w-100"></div>
-                            <div class="col" id="dominio">Column</div>
-                            <div class="col" id="nome_rede">Column</div>
-                            <div class="col" id="upload">Column</div>
-                            <div class="col" id="download">Column</div>
+                            <div class="col" ><b id="dominio"></b></div>
+                            <div class="col"><b  id="nome_rede"></b></div>
+                          </div>
+                        </div>
+
+                        <div class="container" style="margin-top:10px;">
+                          <div class="row">
+                            <div class="col">Upload:</div>
+                            <div class="col">Download:</div>
+                            <div class="w-100"></div>
+                            <div class="col" ><b id="upload">0</b></div>
+                            <div class="col" ><b id="download">0</b></div>
                           </div>
                         </div>
                     </div>
 
+                    <div id="chat" style="float:right;">
+                        <script type="text/javascript">
+                        // <![CDATA[
+                        var chat = document.getElementById('chat');
+                        var ttChatLoaderS = document.createElement('script');
+                        document.tomticketChatLoaderScriptVersion = 2;
+                        ttChatLoaderS.src = 'https://mainline-monitoramento.tomticket.com/scripts-chat/chat.min.js'
+                        + '?id=EP26235'
+                        + '&account=1679040P16112018095648'
+                        + '&autoOpen=0'
+                        + '&hideWhenOffline=0'
+                        + '&d=mainline-monitoramento'
+                        + '&ts=' + new Date().getTime()
+                        + '&ref=' + encodeURIComponent(document.URL);
+                        document.body.appendChild(ttChatLoaderS);
+                    //]]>
+                    </script>
+                    </div>
                 </div>
             </div>
           </section>

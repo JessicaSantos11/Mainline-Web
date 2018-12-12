@@ -247,7 +247,7 @@
                   </div>
                 </div>
             
-                <div id="chat" style="float:rigth;">
+                <div id="chat" style="float:right;">
 
                     <script type="text/javascript">
                     // <![CDATA[

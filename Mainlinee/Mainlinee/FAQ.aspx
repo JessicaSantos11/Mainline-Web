@@ -22,7 +22,7 @@
 
     <form id="form1" runat="server">
         <header>
-	    <button class="btn-voltar"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Voltar</button> 
+	    <asp:Button class="btn-voltar" onclick="voltar" runat="server" Text="Voltar"/>
 	    <p>Perguntas Frequentes</p>
     </header>
     </form>

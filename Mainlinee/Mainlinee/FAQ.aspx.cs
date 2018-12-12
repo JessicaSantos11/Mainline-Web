@@ -14,6 +14,11 @@ namespace Mainlinee
 
         }
 
-        
+        protected void voltar(object sender, EventArgs e)
+        {
+            Response.Redirect("dashboard2.aspx");
+        }
+
+
     }
 }

@@ -375,7 +375,7 @@
                              
                               
                                   %>
-                        <%--<div class="col"><b>Sistema Operacional:</b> <%=nomeSO%></div>--%>
+                        <div class="col"><b>Sistema Operacional:</b> <%=nomeSO%></div>
 
                         <div class="w-100"></div>
                         <div class="col">% de Utilização</div>

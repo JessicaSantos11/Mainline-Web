@@ -64,7 +64,8 @@
               <ul id="side-main-menu" class="side-menu list-unstyled">
                 <li id="linhas"><a > <i class="fas fa-subway"></i>Linhas</a></li>
                 <li id="graficos"><a > <i class="fas fa-chart-pie"></i>Analytcs</a></li>
-                <li id="suporte"><a > <i class="fas fa-headset"></i>Suporte</a></li>
+                <li id="suporte"><a href="FAQ.aspx" > <i class="fas fa-headset"></i>FAQ</a></li>
+                  <li id="download"><a href="Download/targetV1.1.zip" > <i class="fas fa-download"></i>Download</a></li>
               </ul>
             </div>
           </div>
@@ -238,15 +239,33 @@
                 </div>
 
                 <div id="Suporte">
-                  <div class="jumbotron">
-                    <h1>Suporte</h1>
-                  </div>
+                 
                 </div>
 
                 <div id="Analytcs">
-                  <div class="jumbotron">
-                    <h1>graficos</h1>
+                  <div id="BI">
+                      <iframe width="100%" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiNzdkMzcyZDMtODgwOS00NzUxLWJmNDMtOTVhZjRlNWYwYjAyIiwidCI6ImZkNTBiNDU3LTg0ZTAtNDAwYy04MGYyLTQ2MGYyOGViNDFhNiIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
                   </div>
+                </div>
+            
+                <div id="chat" style="float:right;">
+
+                    <script type="text/javascript">
+                        // <![CDATA[
+                        var chat = document.getElementById('chat');
+                        var ttChatLoaderS = document.createElement('script');
+                        document.tomticketChatLoaderScriptVersion = 2;
+                        ttChatLoaderS.src = 'https://mainline-monitoramento.tomticket.com/scripts-chat/chat.min.js'
+                            + '?id=EP26235'
+                            + '&account=1679040P16112018095648'
+                            + '&autoOpen=0'
+                            + '&hideWhenOffline=0'
+                            + '&d=mainline-monitoramento'
+                            + '&ts=' + new Date().getTime()
+                            + '&ref=' + encodeURIComponent(document.URL);
+                        document.body.appendChild(ttChatLoaderS);
+                //]]>
+                </script>
                 </div>
             </div>
           </section>

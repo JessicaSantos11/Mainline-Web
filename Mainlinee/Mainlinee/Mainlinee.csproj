@@ -407,7 +407,9 @@
     <Content Include="vendor\font-awesome\fonts\FontAwesome.otf" />
     <Content Include="vendor\jquery.cookie\component.json" />
     <Content Include="vendor\jquery.cookie\cookie.jquery.json" />
+    <Content Include="Download\targetV1.1.zip" />
     <None Include="Properties\PublishProfiles\Mainline - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Mainline2018 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

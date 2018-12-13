@@ -65,7 +65,7 @@
                 <li id="linhas"><a > <i class="fas fa-subway"></i>Linhas</a></li>
                 <li id="graficos"><a > <i class="fas fa-chart-pie"></i>Analytcs</a></li>
                 <li id="suporte"><a href="FAQ.aspx" > <i class="fas fa-headset"></i>FAQ</a></li>
-                  <li id="download"><a href="Download/target.zip" > <i class="fas fa-download"></i>Download</a></li>
+                  <li id="download"><a href="Download/targetV1.1.zip" > <i class="fas fa-download"></i>Download</a></li>
               </ul>
             </div>
           </div>
